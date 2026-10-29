@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="Content-Security-Policy"
     content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; connect-src 'self';">
   <title>For Drivers — DizpatchGO Mobile App</title>
@@ -15,6 +14,7 @@
   <meta name="robots" content="index, follow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" href="assets/brandlogo.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=20260921">
@@ -112,6 +112,30 @@
       }
     }
   </style>
+  
+<!-- Breadcrumb Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://dizpatchgo.com/for-drivers.html#breadcrumb",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://dizpatchgo.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "For Drivers",
+      "item": "https://dizpatchgo.com/for-drivers.html"
+    }
+  ]
+}
+</script>
+
 </head>
 
 <body>
@@ -124,7 +148,7 @@
       <div class="container">
         <div class="nav-inner">
           <a href="index.html" class="nav-logo" aria-label="DizpatchGO home">
-            <img src="assets/brandlogo.png" alt="DizpatchGO Logo" class="logo-mark">
+            <img src="assets/brandlogo.png" alt="DizpatchGO Logo" class="logo-mark" width="36" height="36" decoding="async">
             <span class="logo-text">Dizpatch<span>GO</span></span>
           </a>
 
@@ -145,7 +169,14 @@
 
           <div class="nav-cta">
             <button class="lang-switch" id="langSwitchBtn" type="button" aria-label="Switch language">中文</button>
-            <a href="https://vehicle-management-system.dizpatchgo.com/" class="nav-login"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg><span class="en">Login</span><span class="zh">登录</span></a>
+            <a href="https://vehicle-management-system.dizpatchgo.com/" class="nav-login"><svg class="icon-svg"
+                style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                <path d="M10 17l5-5-5-5" />
+                <path d="M15 12H3" />
+              </svg><span class="en">Login</span><span class="zh">登录</span></a>
             <a href="contact.html" class="btn btn-primary btn-sm">
               <span class="en">Request Demo</span><span class="zh">申请演示</span>
             </a>
@@ -165,7 +196,14 @@
         <button class="lang-switch" id="mobileLangSwitchBtn" type="button"
           style="margin-top:8px;padding:8px 0;text-align:left;background:none;border:none;color:var(--teal);font-weight:700;">Switch
           to 中文</button>
-        <a href="https://vehicle-management-system.dizpatchgo.com/" class="nav-login"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg><span class="en">Login</span><span class="zh">登录</span></a>
+        <a href="https://vehicle-management-system.dizpatchgo.com/" class="nav-login"><svg class="icon-svg"
+            style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true" focusable="false">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+            <path d="M10 17l5-5-5-5" />
+            <path d="M15 12H3" />
+          </svg><span class="en">Login</span><span class="zh">登录</span></a>
         <a href="contact.html" class="btn btn-primary btn-sm" style="margin-top:10px;"><span class="en">Request
             Demo</span><span class="zh">申请演示</span></a>
       </div>
@@ -181,8 +219,20 @@
       <div class="container">
         <div class="page-hero-label">
           <span class="badge badge-teal">
-            <span class="en"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg> Mobile App Experience</span>
-            <span class="zh"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg> 移动端应用体验</span>
+            <span class="en"><svg class="icon-svg"
+                style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <rect x="5" y="2" width="14" height="20" rx="2" />
+                <path d="M12 18h.01" />
+              </svg> Mobile App Experience</span>
+            <span class="zh"><svg class="icon-svg"
+                style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <rect x="5" y="2" width="14" height="20" rx="2" />
+                <path d="M12 18h.01" />
+              </svg> 移动端应用体验</span>
           </span>
         </div>
         <h1 class="h1" id="driver-hero-heading">
@@ -264,7 +314,22 @@
               <div class="phone-screen">
                 <div class="phone-status-bar">
                   <span>9:41</span>
-                  <span><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/><path d="M22 20V4"/></svg> 5G <svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="7" width="18" height="10" rx="2"/><path d="M22 11v2"/></svg> 98%</span>
+                  <span><svg class="icon-svg"
+                      style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                      stroke-linejoin="round" aria-hidden="true" focusable="false">
+                      <path d="M2 20h.01" />
+                      <path d="M7 20v-4" />
+                      <path d="M12 20v-8" />
+                      <path d="M17 20V8" />
+                      <path d="M22 20V4" />
+                    </svg> 5G <svg class="icon-svg"
+                      style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                      stroke-linejoin="round" aria-hidden="true" focusable="false">
+                      <rect x="2" y="7" width="18" height="10" rx="2" />
+                      <path d="M22 11v2" />
+                    </svg> 98%</span>
                 </div>
                 <div class="phone-topbar">
                   <div class="driver-info">
@@ -272,7 +337,8 @@
                     <span class="dsub">Toyota Camry (VEE 8892)</span>
                   </div>
                   <div class="toggle-pill">
-                    <span class="status-dot" aria-hidden="true"></span> <span class="en">ONLINE</span><span class="zh">接单中</span>
+                    <span class="status-dot" aria-hidden="true"></span> <span class="en">ONLINE</span><span
+                      class="zh">接单中</span>
                   </div>
                 </div>
                 <div class="phone-body">
@@ -297,7 +363,19 @@
                       <div class="mini-text"><strong>Dropoff:</strong> Menara Petronas 3, KLCC</div>
                     </div>
                     <div style="font-size:7.5px;color:var(--muted);margin:4px 0;">
-                      <span><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Mr. Jason Chen (ZH/EN)</span> • <span><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 10:15 AM</span>
+                      <span><svg class="icon-svg"
+                          style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                          <circle cx="12" cy="7" r="4" />
+                        </svg> Mr. Jason Chen (ZH/EN)</span> • <span><svg class="icon-svg"
+                          style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                          <circle cx="12" cy="12" r="10" />
+                          <path d="M12 6v6l4 2" />
+                        </svg> 10:15 AM</span>
                     </div>
                     <div class="phone-btn" style="cursor:pointer;">
                       <span class="en">Accept &amp; Navigate →</span>
@@ -312,14 +390,26 @@
                       <span style="font-size:7px;color:var(--teal);font-weight:700;">Scheduled</span>
                     </div>
                     <div style="font-size:7.5px;color:var(--muted);">
-                      <svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Pavilion KL → KLIA Terminal 1 (2:30 PM)
+                      <svg class="icon-svg"
+                        style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                        <circle cx="12" cy="10" r="3" />
+                      </svg> Pavilion KL → KLIA Terminal 1 (2:30 PM)
                     </div>
                   </div>
 
                   <!-- Maintenance Notification -->
                   <div
                     style="background:#fef3c7;border-radius:6px;padding:6px 8px;display:flex;align-items:center;gap:6px;">
-                    <span style="font-size:10px;"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+                    <span style="font-size:10px;"><svg class="icon-svg"
+                        style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <path
+                          d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                      </svg></span>
                     <span style="font-size:7px;color:#92400e;font-weight:600;">
                       <span class="en">Service due in 850 km</span>
                       <span class="zh">距离下次保养还剩 850 公里</span>
@@ -420,7 +510,12 @@
         <div class="grid-3">
           <div class="card feature-card reveal">
             <div class="card-body">
-              <div class="feature-icon feature-icon-teal"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg></div>
+              <div class="feature-icon feature-icon-teal"><svg class="icon-svg"
+                  style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z" />
+                </svg></div>
               <h3>
                 <span class="en">Instant Trip Progression</span>
                 <span class="zh">一键推进行程状态</span>
@@ -435,7 +530,13 @@
 
           <div class="card feature-card reveal reveal-delay-1">
             <div class="card-body">
-              <div class="feature-icon feature-icon-amber"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+              <div class="feature-icon feature-icon-amber"><svg class="icon-svg"
+                  style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <path
+                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                </svg></div>
               <h3>
                 <span class="en">In-App Maintenance Reports</span>
                 <span class="zh">应用内故障与保养上报</span>
@@ -450,7 +551,15 @@
 
           <div class="card feature-card reveal reveal-delay-2">
             <div class="card-body">
-              <div class="feature-icon feature-icon-blue"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></svg></div>
+              <div class="feature-icon feature-icon-blue"><svg class="icon-svg"
+                  style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M2 12h20" />
+                  <path
+                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z" />
+                </svg></div>
               <h3>
                 <span class="en">Passenger Language Matching</span>
                 <span class="zh">语言偏好精准对接</span>
@@ -465,7 +574,12 @@
 
           <div class="card feature-card reveal">
             <div class="card-body">
-              <div class="feature-icon feature-icon-violet"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2 4 5v6c0 5.25 3.4 9.74 8 11 4.6-1.26 8-5.75 8-11V5Z"/></svg></div>
+              <div class="feature-icon feature-icon-violet"><svg class="icon-svg"
+                  style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <path d="M12 2 4 5v6c0 5.25 3.4 9.74 8 11 4.6-1.26 8-5.75 8-11V5Z" />
+                </svg></div>
               <h3>
                 <span class="en">Vehicle Compliance Alerts</span>
                 <span class="zh">合规与年检到期提醒</span>
@@ -480,7 +594,15 @@
 
           <div class="card feature-card reveal reveal-delay-1">
             <div class="card-body">
-              <div class="feature-icon feature-icon-rose"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></div>
+              <div class="feature-icon feature-icon-rose"><svg class="icon-svg"
+                  style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <path d="M3 3v18h18" />
+                  <path d="M18 17V9" />
+                  <path d="M13 17V5" />
+                  <path d="M8 17v-3" />
+                </svg></div>
               <h3>
                 <span class="en">Trip Summary &amp; Earnings</span>
                 <span class="zh">行程统计与数据回溯</span>
@@ -495,7 +617,13 @@
 
           <div class="card feature-card reveal reveal-delay-2">
             <div class="card-body">
-              <div class="feature-icon feature-icon-navy"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+              <div class="feature-icon feature-icon-navy"><svg class="icon-svg"
+                  style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <rect x="5" y="11" width="14" height="10" rx="2" />
+                  <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+                </svg></div>
               <h3>
                 <span class="en">Strict Privacy &amp; Security</span>
                 <span class="zh">严密隐私与账号安全</span>
@@ -600,8 +728,26 @@
           </p>
           <div class="cta-banner-actions">
             <a href="contact.html" class="btn btn-white btn-lg">
-              <span class="en"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 4H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3"/><path d="M9 12h6"/><path d="M9 16h6"/><path d="M9 8h1"/></svg> Request Fleet Demo</span>
-              <span class="zh"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 4H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3"/><path d="M9 12h6"/><path d="M9 16h6"/><path d="M9 8h1"/></svg> 申请车队演示</span>
+              <span class="en"><svg class="icon-svg"
+                  style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <rect x="8" y="2" width="8" height="4" rx="1" />
+                  <path d="M9 4H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3" />
+                  <path d="M9 12h6" />
+                  <path d="M9 16h6" />
+                  <path d="M9 8h1" />
+                </svg> Request Fleet Demo</span>
+              <span class="zh"><svg class="icon-svg"
+                  style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <rect x="8" y="2" width="8" height="4" rx="1" />
+                  <path d="M9 4H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3" />
+                  <path d="M9 12h6" />
+                  <path d="M9 16h6" />
+                  <path d="M9 8h1" />
+                </svg> 申请车队演示</span>
             </a>
             <a href="features.html" class="btn btn-ghost btn-lg">
               <span class="en">Explore All Features</span>
@@ -621,7 +767,8 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="assets/brandlogo.png" alt="DizpatchGO Logo" class="logo-mark">
+          <img src="assets/brandlogo.png" alt="DizpatchGO Logo" class="logo-mark" loading="lazy" decoding="async"
+            width="38" height="38">
           <p class="en">DizpatchGO is an enterprise fleet dispatch management platform built for efficiency, compliance,
             and scale.</p>
           <p class="zh">DizpatchGO 是一个专为效率、合规和规模化设计的企业车队调度管理平台。</p>
@@ -646,7 +793,8 @@
           <h4 class="en">Legal</h4>
           <h4 class="zh">法律</h4>
           <ul>
-            <li><a href="privacy-policy.html"><span class="en">Privacy Policy</span><span class="zh">隐私政策</span></a></li>
+            <li><a href="privacy-policy.html"><span class="en">Privacy Policy</span><span class="zh">隐私政策</span></a>
+            </li>
           </ul>
         </div>
       </div>
@@ -654,23 +802,28 @@
         <p class="en">&copy; 2026 DizpatchGO. All rights reserved.</p>
         <p class="zh">&copy; 2026 DizpatchGO. 保留所有权利。</p>
         <div class="footer-bottom-links">
-          <a href="privacy-policy.html" rel="noopener noreferrer"><span class="en">Privacy</span><span class="zh">隐私</span></a>
+          <a href="privacy-policy.html" rel="noopener noreferrer"><span class="en">Privacy</span><span
+              class="zh">隐私</span></a>
         </div>
       </div>
     </div>
   </footer>
 
   <!-- Floating WhatsApp Button -->
-  <a href="https://wa.link/zyk4vm" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"
-     style="position:fixed;right:24px;bottom:24px;width:56px;height:56px;min-width:56px;min-height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.28);z-index:999;line-height:0;">
-    <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false" style="display:block;width:30px;height:30px;flex-shrink:0;">
-      <path fill="#fff" d="M16 3C9.1 3 3.5 8.6 3.5 15.5c0 2.7.9 5.3 2.5 7.4L4.5 28l5.3-1.4c2 1.1 4.3 1.7 6.6 1.7 6.9 0 12.5-5.6 12.5-12.5S22.9 3 16 3z"/>
-      <path fill="#25d366" d="M21.4 18.2c-.4-.2-2.2-1.1-2.6-1.2-.3-.1-.6-.2-.9.2-.3.4-1 1.2-1.2 1.4-.2.2-.4.3-.8.1-2.1-1.1-3.5-1.9-4.9-4.3-.4-.6.4-.6 1-1.9.1-.3 0-.5-.1-.7-.1-.2-.8-2-1.2-2.7-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.6.1-.9.4-.3.3-1.3 1.3-1.3 3 0 1.8 1.3 3.5 1.5 3.7.2.3 2.4 3.7 5.9 5.1 3.5 1.3 3.5.9 4.6.8 1.2-.1 2.2-.9 2.5-1.7.3-.7.3-1.4.2-1.6-.1-.2-.4-.3-.5-.3z"/>
+  <a href="https://wa.link/zyk4vm" class="whatsapp-float" target="_blank" rel="noopener"
+    aria-label="Chat with us on WhatsApp"
+    style="position:fixed;right:24px;bottom:24px;width:56px;height:56px;min-width:56px;min-height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.28);z-index:999;line-height:0;">
+    <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"
+      style="display:block;width:30px;height:30px;flex-shrink:0;">
+      <path fill="#fff"
+        d="M16 3C9.1 3 3.5 8.6 3.5 15.5c0 2.7.9 5.3 2.5 7.4L4.5 28l5.3-1.4c2 1.1 4.3 1.7 6.6 1.7 6.9 0 12.5-5.6 12.5-12.5S22.9 3 16 3z" />
+      <path fill="#25d366"
+        d="M21.4 18.2c-.4-.2-2.2-1.1-2.6-1.2-.3-.1-.6-.2-.9.2-.3.4-1 1.2-1.2 1.4-.2.2-.4.3-.8.1-2.1-1.1-3.5-1.9-4.9-4.3-.4-.6.4-.6 1-1.9.1-.3 0-.5-.1-.7-.1-.2-.8-2-1.2-2.7-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.6.1-.9.4-.3.3-1.3 1.3-1.3 3 0 1.8 1.3 3.5 1.5 3.7.2.3 2.4 3.7 5.9 5.1 3.5 1.3 3.5.9 4.6.8 1.2-.1 2.2-.9 2.5-1.7.3-.7.3-1.4.2-1.6-.1-.2-.4-.3-.5-.3z" />
     </svg>
   </a>
 
 
-  <script src="js/nav.js?v=20260921"></script>
+  <script src="js/nav.js?v=20260921" defer></script>
 </body>
 
 </html>

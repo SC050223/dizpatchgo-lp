@@ -6,22 +6,38 @@
   'use strict';
 
   /* ── Scroll-reveal ─────────────────────────────────────── */
-  function initReveal() {
-    const els = document.querySelectorAll('.reveal');
-    if (!els.length) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            io.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
-    els.forEach((el) => io.observe(el));
-  }
+function initReveal() {
+  const els = document.querySelectorAll('.reveal');
+
+  if (!els.length) return;
+
+  // If IntersectionObserver is unsupported,
+  // leave all content visible.
+  if (!('IntersectionObserver' in window)) return;
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  els.forEach((el) => {
+
+    // Animate only elements below the current viewport.
+    // Content already visible on screen stays visible.
+    if (el.getBoundingClientRect().top >= window.innerHeight) {
+      el.classList.add('reveal-pending');
+      io.observe(el);
+    }
+
+  });
+}
 
   /* ── Sticky nav shadow on scroll ───────────────────────── */
   function initNavScroll() {

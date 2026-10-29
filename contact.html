@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="Content-Security-Policy"
     content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; connect-src 'self';">
   <title>Contact Us — DizpatchGO Fleet Dispatch</title>
@@ -14,6 +13,7 @@
     content="Request a live demo of DizpatchGO or get in touch with our enterprise fleet operations consulting team.">
   <meta name="robots" content="index, follow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/png" href="assets/brandlogo.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
@@ -32,6 +32,30 @@
       margin-top: 12px;
     }
   </style>
+  
+<!-- Breadcrumb Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://dizpatchgo.com/contact.html#breadcrumb",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://dizpatchgo.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Contact Us",
+      "item": "https://dizpatchgo.com/contact.html"
+    }
+  ]
+}
+</script>
+
 </head>
 
 <body>
@@ -44,7 +68,7 @@
       <div class="container">
         <div class="nav-inner">
           <a href="index.html" class="nav-logo" aria-label="DizpatchGO home">
-            <img src="assets/brandlogo.png" alt="DizpatchGO Logo" class="logo-mark">
+            <img src="assets/brandlogo.png" alt="DizpatchGO Logo" class="logo-mark" width="36" height="36" decoding="async">
             <span class="logo-text">Dizpatch<span>GO</span></span>
           </a>
 
@@ -326,7 +350,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="assets/brandlogo.png" alt="DizpatchGO Logo" class="logo-mark">
+          <img src="assets/brandlogo.png" alt="DizpatchGO Logo" class="logo-mark" loading="lazy" decoding="async" width="38" height="38">
           <p class="en">DizpatchGO is an enterprise fleet dispatch management platform built for efficiency, compliance,
             and scale.</p>
           <p class="zh">DizpatchGO 是一个专为效率、合规和规模化设计的企业车队调度管理平台。</p>
@@ -375,8 +399,7 @@
   </a>
 
 
-  <script src="js/nav.js?v=20260921"></script>
-  <script src="js/contact.js?v=20260921"></script>
+  <script src="js/nav.js?v=20260921" defer></script>
+  <script src="js/contact.js?v=20260921" defer></script>
 </body>
-
 </html>
