@@ -12,7 +12,7 @@
   <meta name="description"
     content="DizpatchGO is an enterprise e-hailing dispatch management platform with smart driver matching, real-time GPS tracking, fleet compliance, and multilingual order management.">
   <meta name="robots" content="index, follow">
-  <link rel="icon" type="image/png" href="assets/brandlogo-128.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
   <link rel="preload" href="assets/fonts/inter/inter-latin-v20.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" href="assets/DG_banner.webp" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="css/style.css?v=20261029-fonts">
@@ -42,7 +42,7 @@
     "@type": "Brand",
     "name": "DizpatchGO",
     "url": "https://dizpatchgo.com/",
-    "logo": "https://dizpatchgo.com/assets/brandlogo.png"
+    "logo": "https://dizpatchgo.com/assets/brandlogo-128.png"
   }
 }
 </script>
@@ -100,26 +100,27 @@
      NAVIGATION
 ═══════════════════════════════════════════════════ -->
   <header>
-    <nav class="nav" role="navigation" aria-label="Main navigation">
+    <nav class="nav" aria-label="Main navigation">
       <div class="container">
         <div class="nav-inner">
           <a href="index.html" class="nav-logo" aria-label="DizpatchGO home">
-            <img src="assets/brandlogo-128.png" alt="DizpatchGO Logo" class="logo-mark" width="36" height="36"
+            <img src="assets/brandlogo-128.png" alt="" class="logo-mark" width="36" height="36"
               decoding="async">
             <span class="logo-text">Dizpatch<span>GO</span></span>
           </a>
 
-          <div class="nav-links" role="menubar">
-            <a href="index.html" class="active" role="menuitem">
+          <div class="nav-links">
+            <a href="index.html" class="active">
               <span class="en">Home</span><span class="zh">首页</span>
             </a>
-            <a href="features.html" role="menuitem">
+            <a href="features.html">
               <span class="en">Features</span><span class="zh">功能</span>
             </a>
-            <a href="for-drivers.html" role="menuitem">
+            <a href="for-drivers.html">
               <span class="en">For Drivers</span><span class="zh">司机专区</span>
             </a>
-            <a href="contact.html" role="menuitem">
+            <a href="pricing.html"><span class="en">Pricing</span><span class="zh">价格</span></a>
+            <a href="contact.html">
               <span class="en">Contact</span><span class="zh">联系我们</span>
             </a>
           </div>
@@ -145,11 +146,12 @@
           </button>
         </div>
       </div>
-      <div class="mobile-menu" id="mobileMenu" role="menu">
-        <a href="index.html" role="menuitem"><span class="en">Home</span><span class="zh">首页</span></a>
-        <a href="features.html" role="menuitem"><span class="en">Features</span><span class="zh">功能</span></a>
-        <a href="for-drivers.html" role="menuitem"><span class="en">For Drivers</span><span class="zh">司机专区</span></a>
-        <a href="contact.html" role="menuitem"><span class="en">Contact</span><span class="zh">联系我们</span></a>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html"><span class="en">Home</span><span class="zh">首页</span></a>
+        <a href="features.html"><span class="en">Features</span><span class="zh">功能</span></a>
+        <a href="for-drivers.html"><span class="en">For Drivers</span><span class="zh">司机专区</span></a>
+        <a href="pricing.html"><span class="en">Pricing</span><span class="zh">价格</span></a>
+        <a href="contact.html"><span class="en">Contact</span><span class="zh">联系我们</span></a>
         <button class="lang-switch" id="mobileLangSwitchBtn" type="button"
           style="margin-top:8px;padding:8px 0;text-align:left;background:none;border:none;color:var(--teal);font-weight:700;">Switch
           to 中文</button>
@@ -526,8 +528,8 @@
                   <path d="M15 13v2" />
                   <path d="M9 13v2" />
                 </svg></div>
-              <h3 class="en">Smart Dispatch Engine</h3>
-              <h3 class="zh">智能调度引擎</h3>
+              <h3 class="en"><a href="features.html#feat1-heading">Smart Dispatch Engine</a></h3>
+              <h3 class="zh"><a href="features.html#feat1-heading">智能调度引擎</a></h3>
               <p class="en">AI-powered driver suggestions ranked by GPS proximity, language match, and seating capacity.
                 Assign the best driver in seconds.</p>
               <p class="zh">AI驱动的司机推荐，按GPS距离、语言匹配和座位容量排名。几秒内指派最佳司机。</p>
@@ -564,8 +566,8 @@
                   <circle cx="6.5" cy="16.5" r="2.5" />
                   <circle cx="16.5" cy="16.5" r="2.5" />
                 </svg></div>
-              <h3 class="en">Fleet & Compliance</h3>
-              <h3 class="zh">车队与合规管理</h3>
+              <h3 class="en"><a href="features.html#feat3-heading">Fleet & Compliance</a></h3>
+              <h3 class="zh"><a href="features.html#feat3-heading">车队与合规管理</a></h3>
               <p class="en">Track road tax, insurance, and Puspakom expiry dates across your entire fleet. Get alerts
                 before anything lapses.</p>
               <p class="zh">追踪整个车队的道路税、保险和车检到期日期，在任何事项失效前获得警报。</p>
@@ -683,32 +685,32 @@
           </p>
         </div>
 
-        <div class="how-steps" role="list">
-          <div class="step-item reveal" role="listitem">
-            <div class="step-num" aria-label="Step 1">1</div>
+        <ol class="how-steps workflow-steps">
+          <li class="step-item reveal">
+            <div class="step-num" aria-hidden="true">1</div>
             <h3 class="en">Create an Order</h3>
             <h3 class="zh">创建订单</h3>
             <p class="en">Admin enters the client details, pickup & dropoff locations, transport type, and scheduled
               time. Google Maps autocomplete makes it fast.</p>
             <p class="zh">管理员输入客户详情、取送地点、运输类型和预定时间。谷歌地图自动完成让操作更快捷。</p>
-          </div>
-          <div class="step-item reveal reveal-delay-2" role="listitem">
-            <div class="step-num" aria-label="Step 2">2</div>
+          </li>
+          <li class="step-item reveal reveal-delay-2">
+            <div class="step-num" aria-hidden="true">2</div>
             <h3 class="en">Smart Assign a Driver</h3>
             <h3 class="zh">智能指派司机</h3>
             <p class="en">DizpatchGO ranks the nearest available drivers by real driving time, language match, and
               capacity. Assign in one click.</p>
             <p class="zh">DizpatchGO 按实际驾驶时间、语言匹配和容量对最近的可用司机进行排名。一键指派。</p>
-          </div>
-          <div class="step-item reveal reveal-delay-4" role="listitem">
-            <div class="step-num" aria-label="Step 3">3</div>
-            <h3 class="en">Track & Complete</h3>
-            <h3 class="zh">追踪与完成</h3>
+          </li>
+          <li class="step-item reveal reveal-delay-4">
+            <div class="step-num" aria-hidden="true">3</div>
+            <h3 class="en"><a href="features.html#feat2-heading">Track & Complete</a></h3>
+            <h3 class="zh"><a href="features.html#feat2-heading">追踪与完成</a></h3>
             <p class="en">The driver accepts the order, starts the trip, and marks it complete. Admins see live status
               updates across all active orders.</p>
             <p class="zh">司机接受订单、开始行程并标记完成。管理员可看到所有活跃订单的实时状态更新。</p>
-          </div>
-        </div>
+          </li>
+        </ol>
       </div>
     </section>
 
@@ -784,7 +786,7 @@
 ═══════════════════════════════════════════════════ -->
     <section class="section home-faq" aria-labelledby="faq-heading">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <div class="section-label">
             <span class="en">Common Questions</span><span class="zh">常见问题解答</span>
           </div>
@@ -792,19 +794,19 @@
           <p><span class="en">Got questions about DizpatchGO? We've got answers.</span><span class="zh">关于 DizpatchGO 的常见疑问与解答。</span></p>
         </div>
         <div class="grid-2 home-faq-grid">
-          <article class="home-faq-item">
+          <article class="home-faq-item reveal">
             <h3><span class="en">What is DizpatchGO?</span><span class="zh">什么是 DizpatchGO？</span></h3>
             <p><span class="en">DizpatchGO is a fleet dispatch management platform for enterprise operations, with driver matching, GPS tracking, order management and fleet compliance tracking.</span><span class="zh">DizpatchGO 是面向企业运营的车队调度管理平台，提供司机匹配、GPS 追踪、订单管理和车队合规追踪功能。</span></p>
           </article>
-          <article class="home-faq-item">
+          <article class="home-faq-item reveal reveal-delay-1">
             <h3><span class="en">How does DizpatchGO assign drivers?</span><span class="zh">DizpatchGO 如何指派司机？</span></h3>
             <p><span class="en">DizpatchGO ranks available drivers using a scoring algorithm based on driving time, language compatibility and vehicle capacity.</span><span class="zh">DizpatchGO 使用评分算法，根据驾驶时间、语言兼容性和车辆容量对可用司机进行排名。</span></p>
           </article>
-          <article class="home-faq-item">
+          <article class="home-faq-item reveal">
             <h3><span class="en">Can DizpatchGO track vehicle compliance?</span><span class="zh">DizpatchGO 可以追踪车辆合规情况吗？</span></h3>
             <p><span class="en">Yes. It tracks vehicle road tax, insurance and Puspakom inspection expiry dates and alerts teams before they lapse.</span><span class="zh">可以。它可追踪车辆道路税、保险和 Puspakom 车检的到期日期，并在到期前提醒团队。</span></p>
           </article>
-          <article class="home-faq-item">
+          <article class="home-faq-item reveal reveal-delay-1">
             <h3><span class="en">Where can I find pricing and driver app information?</span><span class="zh">在哪里可以查看价格和司机应用信息？</span></h3>
             <p><span class="en">Visit the <a href="pricing.html">pricing page</a> for pricing information and the <a href="for-drivers.html">driver page</a> to learn about the driver app.</span><span class="zh">请访问<a href="pricing.html">价格页面</a>查看价格信息，或访问<a href="for-drivers.html">司机专区</a>了解司机应用。</span></p>
           </article>
@@ -859,35 +861,36 @@
   <!-- ═══════════════════════════════════════════════════
      FOOTER
 ═══════════════════════════════════════════════════ -->
-  <footer class="footer" role="contentinfo">
+  <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <img src="assets/brandlogo-128.png" alt="DizpatchGO Logo" class="logo-mark" loading="lazy" decoding="async"
             width="38" height="38">
           <p class="en">DizpatchGO is an enterprise fleet dispatch management platform built for efficiency, compliance,
-            and scale.</p>
-          <p class="zh">DizpatchGO 是一个专为效率、合规和规模化设计的企业车队调度管理平台。</p>
+            and scale.<br>Published by Presoft (M) Sdn Bhd.</p>
+          <p class="zh">DizpatchGO 是一个专为效率、合规和规模化设计的企业车队调度管理平台。<br>由 Presoft (M) Sdn Bhd 发布。</p>
         </div>
         <div class="footer-col">
-          <h4 class="en">Product</h4>
-          <h4 class="zh">产品</h4>
+          <h2 class="en">Product</h2>
+          <h2 class="zh">产品</h2>
           <ul>
             <li><a href="features.html"><span class="en">Features</span><span class="zh">功能</span></a></li>
             <li><a href="for-drivers.html"><span class="en">For Drivers</span><span class="zh">司机专区</span></a></li>
+            <li><a href="pricing.html"><span class="en">Pricing</span><span class="zh">价格</span></a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4 class="en">Company</h4>
-          <h4 class="zh">公司</h4>
+          <h2 class="en">Company</h2>
+          <h2 class="zh">公司</h2>
           <ul>
             <li><a href="contact.html"><span class="en">Contact Us</span><span class="zh">联系我们</span></a></li>
             <li><a href="contact.html"><span class="en">Request Demo</span><span class="zh">申请演示</span></a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4 class="en">Legal</h4>
-          <h4 class="zh">法律</h4>
+          <h2 class="en">Legal</h2>
+          <h2 class="zh">法律</h2>
           <ul>
             <li><a href="privacy-policy.html"><span class="en">Privacy Policy</span><span class="zh">隐私政策</span></a>
             </li>
@@ -907,15 +910,8 @@
 
   <!-- Floating WhatsApp Button -->
   <a href="https://wa.link/zyk4vm" class="whatsapp-float" target="_blank" rel="noopener"
-    aria-label="Chat with us on WhatsApp"
-    style="position:fixed;right:24px;bottom:24px;width:56px;height:56px;min-width:56px;min-height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.28);z-index:999;line-height:0;">
-    <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"
-      style="display:block;width:30px;height:30px;flex-shrink:0;">
-      <path fill="#fff"
-        d="M16 3C9.1 3 3.5 8.6 3.5 15.5c0 2.7.9 5.3 2.5 7.4L4.5 28l5.3-1.4c2 1.1 4.3 1.7 6.6 1.7 6.9 0 12.5-5.6 12.5-12.5S22.9 3 16 3z" />
-      <path fill="#25d366"
-        d="M21.4 18.2c-.4-.2-2.2-1.1-2.6-1.2-.3-.1-.6-.2-.9.2-.3.4-1 1.2-1.2 1.4-.2.2-.4.3-.8.1-2.1-1.1-3.5-1.9-4.9-4.3-.4-.6.4-.6 1-1.9.1-.3 0-.5-.1-.7-.1-.2-.8-2-1.2-2.7-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.6.1-.9.4-.3.3-1.3 1.3-1.3 3 0 1.8 1.3 3.5 1.5 3.7.2.3 2.4 3.7 5.9 5.1 3.5 1.3 3.5.9 4.6.8 1.2-.1 2.2-.9 2.5-1.7.3-.7.3-1.4.2-1.6-.1-.2-.4-.3-.5-.3z" />
-    </svg>
+    aria-label="Chat with us on WhatsApp">
+    <img src="assets/whatsapp-icon.webp" width="56" height="56" alt="" aria-hidden="true">
   </a>
 
 
