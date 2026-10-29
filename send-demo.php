@@ -3,6 +3,8 @@
  * DizpatchGO — Demo Request Email Handler
  * Uses PHPMailer to send webform data to sales / admin.
  */
+// SEO: Prevent search engines from indexing this PHP endpoint
+header('X-Robots-Tag: noindex, nofollow');
 
 // Define application init token to allow loading config.php
 define('DIZPATCHGO_INIT', true);
