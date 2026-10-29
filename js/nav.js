@@ -112,6 +112,7 @@ function initReveal() {
   }
 
   function applyLang(lang, btns) {
+    document.documentElement.lang = lang === 'zh' ? 'zh' : 'en';
     if (lang === 'zh') {
       document.body.classList.add('lang-zh');
       btns.forEach((btn) => {

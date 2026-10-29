@@ -6,18 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; connect-src 'self';">
+    content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'; img-src 'self' data:; connect-src 'self';">
   <title>For Drivers — DizpatchGO Mobile App</title>
   <link rel="canonical" href="https://dizpatchgo.com/for-drivers.html">
   <meta name="description"
     content="Empower your fleet drivers with the DizpatchGO Driver App. One-tap availability, live GPS dispatch, clear order workflows, and self-service maintenance reporting.">
   <meta name="robots" content="index, follow">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="icon" type="image/png" href="assets/brandlogo.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260921">
+  <link rel="icon" type="image/png" href="assets/brandlogo-128.png">
+  <link rel="preload" href="assets/fonts/inter/inter-latin-v20.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css?v=20261029-fonts">
   <style>
     /* Driver page specific styles */
     .driver-hero-grid {
@@ -148,7 +145,7 @@
       <div class="container">
         <div class="nav-inner">
           <a href="index.html" class="nav-logo" aria-label="DizpatchGO home">
-            <img src="assets/brandlogo.png" alt="DizpatchGO Logo" class="logo-mark" width="36" height="36" decoding="async">
+            <img src="assets/brandlogo-128.png" alt="DizpatchGO Logo" class="logo-mark" width="36" height="36" decoding="async">
             <span class="logo-text">Dizpatch<span>GO</span></span>
           </a>
 
@@ -250,7 +247,7 @@
     <!-- ═══════════════════════════════════════════════════
      APP SHOWCASE HERO
 ═══════════════════════════════════════════════════ -->
-    <section class="section" style="padding-top: 40px;">
+    <section aria-labelledby="driver-capabilities-heading" class="section" style="padding-top: 40px;">
       <div class="container">
         <div class="driver-hero-grid">
           <div class="reveal">
@@ -258,7 +255,7 @@
               <span class="en">Core Driver Capabilities</span>
               <span class="zh">核心司机功能</span>
             </div>
-            <h2 class="h2" style="color:var(--navy);margin-bottom:20px;">
+            <h2 id="driver-capabilities-heading" class="h2" style="color:var(--navy);margin-bottom:20px;">
               <span class="en">Everything a professional driver needs in one screen</span>
               <span class="zh">专业司机所需的一切，尽在一屏掌控</span>
             </h2>
@@ -268,8 +265,8 @@
               <span class="zh">告别复杂繁琐的多层菜单。司机可清晰接收派单信息、上车备注、乘客语言偏好及一键推进状态按钮。</span>
             </p>
 
-            <div class="feature-list">
-              <div class="feature-list-item">
+            <ul class="feature-list">
+              <li class="feature-list-item">
                 <span class="check" aria-hidden="true">✓</span>
                 <div>
                   <strong><span class="en">1-Tap Online / Offline Status</span><span
@@ -277,16 +274,16 @@
                   <p class="caption"><span class="en">Instantly let operations know when you are available, on break, or
                       off duty.</span><span class="zh">即时告知调度后台当前是可接单、休息还是已下班。</span></p>
                 </div>
-              </div>
-              <div class="feature-list-item">
+              </li>
+              <li class="feature-list-item">
                 <span class="check" aria-hidden="true">✓</span>
                 <div>
                   <strong><span class="en">Smart GPS Location Sync</span><span class="zh">智能后台 GPS 同步</span></strong>
                   <p class="caption"><span class="en">Automatic battery-friendly background location sharing ensures
                       optimal nearby dispatching.</span><span class="zh">低功耗后台位置自动同步，确保系统为您分配最优就近订单。</span></p>
                 </div>
-              </div>
-              <div class="feature-list-item">
+              </li>
+              <li class="feature-list-item">
                 <span class="check" aria-hidden="true">✓</span>
                 <div>
                   <strong><span class="en">Assigned, Ongoing &amp; History Tabs</span><span
@@ -294,8 +291,8 @@
                   <p class="caption"><span class="en">Organize current tasks and review past completed rides, fares, and
                       passenger details.</span><span class="zh">井井有条地组织当下任务，随时回溯已完成行程、车费与乘客明细。</span></p>
                 </div>
-              </div>
-              <div class="feature-list-item">
+              </li>
+              <li class="feature-list-item">
                 <span class="check" aria-hidden="true">✓</span>
                 <div>
                   <strong><span class="en">Multilingual Profile Preferences</span><span
@@ -303,12 +300,12 @@
                   <p class="caption"><span class="en">Set English, Malay, or Chinese capabilities so admins match you
                       with the right passengers.</span><span class="zh">支持设定英语、马来语、中文语言能力，便于系统精准匹配乘客。</span></p>
                 </div>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
 
           <!-- Phone Mockup Visual -->
-          <div class="driver-visual-wrap reveal reveal-delay-1">
+          <div class="driver-visual-wrap reveal reveal-delay-1" aria-hidden="true">
             <div class="driver-phone-glow"></div>
             <div class="phone-frame" style="position:relative;z-index:1;">
               <div class="phone-screen">
@@ -426,14 +423,14 @@
     <!-- ═══════════════════════════════════════════════════
      DRIVER WORKFLOW STEPS
 ═══════════════════════════════════════════════════ -->
-    <section class="section" style="background: var(--bg-subtle);">
+    <section aria-labelledby="driver-workflow-heading" class="section" style="background: var(--bg-subtle);">
       <div class="container">
         <div class="section-header reveal">
           <div class="section-label">
             <span class="en">Driver Onboarding</span>
             <span class="zh">司机入驻与使用流程</span>
           </div>
-          <h2 class="h2">
+          <h2 id="driver-workflow-heading" class="h2">
             <span class="en">Start driving in 3 simple steps</span>
             <span class="zh">简单三步，即刻上线接单</span>
           </h2>
@@ -489,14 +486,14 @@
     <!-- ═══════════════════════════════════════════════════
      DRIVER BENEFITS / FEATURES GRID
 ═══════════════════════════════════════════════════ -->
-    <section class="section">
+    <section aria-labelledby="driver-features-heading" class="section">
       <div class="container">
         <div class="section-header reveal">
           <div class="section-label">
             <span class="en">Driver App Highlights</span>
             <span class="zh">司机端亮点功能</span>
           </div>
-          <h2 class="h2">
+          <h2 id="driver-features-heading" class="h2">
             <span class="en">Everything built for on-the-road efficiency</span>
             <span class="zh">专注于行车途中的便捷与高效</span>
           </h2>
@@ -507,8 +504,8 @@
           </p>
         </div>
 
-        <div class="grid-3">
-          <div class="card feature-card reveal">
+        <ul class="grid-3">
+          <li class="card feature-card reveal">
             <div class="card-body">
               <div class="feature-icon feature-icon-teal"><svg class="icon-svg"
                   style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
@@ -526,9 +523,9 @@
                 <span class="zh">“已到达上车点”、“已接到乘客”、“行程已结束”大按钮清晰易触，无需繁琐层级确认。</span>
               </p>
             </div>
-          </div>
+          </li>
 
-          <div class="card feature-card reveal reveal-delay-1">
+          <li class="card feature-card reveal reveal-delay-1">
             <div class="card-body">
               <div class="feature-icon feature-icon-amber"><svg class="icon-svg"
                   style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
@@ -547,9 +544,9 @@
                 <span class="zh">发现轮胎磨损或刹车异响？司机可直接在手机端快速提交保养需求，车队工坊即刻跟进。</span>
               </p>
             </div>
-          </div>
+          </li>
 
-          <div class="card feature-card reveal reveal-delay-2">
+          <li class="card feature-card reveal reveal-delay-2">
             <div class="card-body">
               <div class="feature-icon feature-icon-blue"><svg class="icon-svg"
                   style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
@@ -570,9 +567,9 @@
                 <span class="zh">在到达前即可获知乘客语言偏好（英语、中文、马来语），从容提供体贴专业的沟通体验。</span>
               </p>
             </div>
-          </div>
+          </li>
 
-          <div class="card feature-card reveal">
+          <li class="card feature-card reveal">
             <div class="card-body">
               <div class="feature-icon feature-icon-violet"><svg class="icon-svg"
                   style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
@@ -590,9 +587,9 @@
                 <span class="zh">个人主页可随时查看所驾车辆的路税、保险与 Puspakom 验车有效期，杜绝违规上路风险。</span>
               </p>
             </div>
-          </div>
+          </li>
 
-          <div class="card feature-card reveal reveal-delay-1">
+          <li class="card feature-card reveal reveal-delay-1">
             <div class="card-body">
               <div class="feature-icon feature-icon-rose"><svg class="icon-svg"
                   style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
@@ -613,9 +610,9 @@
                 <span class="zh">每日与每周完成单量、行驶总里程及历史单据透明记录，方便核算。</span>
               </p>
             </div>
-          </div>
+          </li>
 
-          <div class="card feature-card reveal reveal-delay-2">
+          <li class="card feature-card reveal reveal-delay-2">
             <div class="card-body">
               <div class="feature-icon feature-icon-navy"><svg class="icon-svg"
                   style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
@@ -634,8 +631,8 @@
                 <span class="zh">仅在“上线”状态下同步定位；乘客联系方式通过内部安全调度通道保护，严守隐私。</span>
               </p>
             </div>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -767,7 +764,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="assets/brandlogo.png" alt="DizpatchGO Logo" class="logo-mark" loading="lazy" decoding="async"
+          <img src="assets/brandlogo-128.png" alt="DizpatchGO Logo" class="logo-mark" loading="lazy" decoding="async"
             width="38" height="38">
           <p class="en">DizpatchGO is an enterprise fleet dispatch management platform built for efficiency, compliance,
             and scale.</p>

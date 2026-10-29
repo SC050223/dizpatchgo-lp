@@ -7,17 +7,14 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="robots" content="index, follow">
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; connect-src 'self';">
+    content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'; img-src 'self' data:; connect-src 'self';">
   <title>Features — DizpatchGO</title>
   <link rel="canonical" href="https://dizpatchgo.com/features.html">
   <meta name="description"
     content="Explore DizpatchGO's full feature set: smart dispatch, fleet compliance, order management, multilingual support, GPS tracking, analytics, and more.">
-  <link rel="icon" type="image/png" href="assets/brandlogo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260921">
+  <link rel="icon" type="image/png" href="assets/brandlogo-128.png">
+  <link rel="preload" href="assets/fonts/inter/inter-latin-v20.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css?v=20261029-fonts">
   <style>
     .feature-section {
       padding: 80px 0;
@@ -228,7 +225,7 @@
       <div class="container">
         <div class="nav-inner">
           <a href="index.html" class="nav-logo" aria-label="DizpatchGO home">
-            <img src="assets/brandlogo.png" alt="DizpatchGO Logo" class="logo-mark" width="36" height="36"
+            <img src="assets/brandlogo-128.png" alt="DizpatchGO Logo" class="logo-mark" width="36" height="36"
               decoding="async">
             <span class="logo-text">Dizpatch<span>GO</span></span>
           </a>
@@ -317,33 +314,33 @@
                 capacity.</span>
               <span class="zh">不再猜测该派哪位司机。DizpatchGO 使用谷歌地图距离矩阵API和评分算法，按实际驾驶时间、语言兼容性和车辆容量对可用司机进行排名。</span>
             </p>
-            <div class="feature-list">
-              <div class="feature-list-item">
+            <ul class="feature-list">
+              <li class="feature-list-item">
                 <div class="check" aria-hidden="true">✓</div>
                 <span class="en">Ranks top 5 nearest drivers by real driving time — not straight-line distance</span>
                 <span class="zh">按实际驾驶时间（非直线距离）排列最近的5位司机</span>
-              </div>
-              <div class="feature-list-item">
+              </li>
+              <li class="feature-list-item">
                 <div class="check" aria-hidden="true">✓</div>
                 <span class="en">Language match indicator — ensure driver speaks client's language</span>
                 <span class="zh">语言匹配指标——确保司机会说客户的语言</span>
-              </div>
-              <div class="feature-list-item">
+              </li>
+              <li class="feature-list-item">
                 <div class="check" aria-hidden="true">✓</div>
                 <span class="en">Capacity check — only suggest vehicles that fit the requested seats</span>
                 <span class="zh">容量检查——仅推荐满足所需座位数的车辆</span>
-              </div>
-              <div class="feature-list-item">
+              </li>
+              <li class="feature-list-item">
                 <div class="check" aria-hidden="true">✓</div>
                 <span class="en">Conflict detection — checks for overlapping scheduled trips</span>
                 <span class="zh">冲突检测——检查排期行程是否有重叠</span>
-              </div>
-              <div class="feature-list-item">
+              </li>
+              <li class="feature-list-item">
                 <div class="check" aria-hidden="true">✓</div>
                 <span class="en">50km radius filter to reduce irrelevant API calls and costs</span>
                 <span class="zh">50公里半径过滤，减少不必要的API调用和成本</span>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
           <div class="feature-visual reveal reveal-delay-2" aria-hidden="true">
             <div class="feature-visual-inner">
@@ -513,33 +510,33 @@
                 every stage — from scheduling to cancellation with documented reasons.</span>
               <span class="zh">每个订单都通过透明、可审计的流程处理。管理员在每个阶段都拥有完全控制权——从排期到取消（附记录原因）。</span>
             </p>
-            <div class="feature-list">
-              <div class="feature-list-item">
+            <ul class="feature-list">
+              <li class="feature-list-item">
                 <div class="check" aria-hidden="true">✓</div>
                 <span class="en">5 order stages: Pending → Assigned → Ongoing → Completed / Cancelled</span>
                 <span class="zh">5个订单阶段：待处理→已分配→进行中→完成/取消</span>
-              </div>
-              <div class="feature-list-item">
+              </li>
+              <li class="feature-list-item">
                 <div class="check" aria-hidden="true">✓</div>
                 <span class="en">Support for Point-to-Point, Hourly, and Charter transport types</span>
                 <span class="zh">支持点对点、按小时和包车运输类型</span>
-              </div>
-              <div class="feature-list-item">
+              </li>
+              <li class="feature-list-item">
                 <div class="check" aria-hidden="true">✓</div>
                 <span class="en">Schedule future orders with auto-transition when pickup time arrives</span>
                 <span class="zh">排期未来订单，到取车时间时自动过渡</span>
-              </div>
-              <div class="feature-list-item">
+              </li>
+              <li class="feature-list-item">
                 <div class="check" aria-hidden="true">✓</div>
                 <span class="en">Reassign or unassign orders mid-trip with a full transfer audit trail</span>
                 <span class="zh">行程中途重新分配或取消分配，附完整的转让审计记录</span>
-              </div>
-              <div class="feature-list-item">
+              </li>
+              <li class="feature-list-item">
                 <div class="check" aria-hidden="true">✓</div>
                 <span class="en">Add-on charges with documented reason for billing transparency</span>
                 <span class="zh">附加收费并记录原因，确保计费透明</span>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -560,33 +557,33 @@
                 insurance, Puspakom inspection, and service mileage — and flags issues 30 days in advance.</span>
               <span class="zh">DizpatchGO 监控车队中每辆车的合规状态——道路税、保险、车检和服务里程——并提前30天标记问题。</span>
             </p>
-            <div class="feature-list">
-              <div class="feature-list-item">
+            <ul class="feature-list">
+              <li class="feature-list-item">
                 <div class="check" aria-hidden="true">✓</div>
                 <span class="en">Road tax, insurance & Puspakom expiry tracking per vehicle</span>
                 <span class="zh">每辆车的道路税、保险和车检到期追踪</span>
-              </div>
-              <div class="feature-list-item">
+              </li>
+              <li class="feature-list-item">
                 <div class="check" aria-hidden="true">✓</div>
                 <span class="en">Colour-coded status: Valid (green) / Expiring Soon (amber) / Expired (red)</span>
                 <span class="zh">彩色状态：有效（绿色）/即将到期（琥珀色）/已到期（红色）</span>
-              </div>
-              <div class="feature-list-item">
+              </li>
+              <li class="feature-list-item">
                 <div class="check" aria-hidden="true">✓</div>
                 <span class="en">Service mileage tracking — alerts when service is due or overdue</span>
                 <span class="zh">服务里程追踪——服务到期或逾期时发出警报</span>
-              </div>
-              <div class="feature-list-item">
+              </li>
+              <li class="feature-list-item">
                 <div class="check" aria-hidden="true">✓</div>
                 <span class="en">Traffic summons management — track offense type, amount, and status</span>
                 <span class="zh">交通传票管理——追踪违规类型、金额和状态</span>
-              </div>
-              <div class="feature-list-item">
+              </li>
+              <li class="feature-list-item">
                 <div class="check" aria-hidden="true">✓</div>
                 <span class="en">Maintenance log — full service history with costs and receipts</span>
                 <span class="zh">维护日志——包含费用和收据的完整服务历史</span>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
           <div class="feature-visual reveal reveal-delay-2" aria-hidden="true">
             <div class="feature-visual-inner">
@@ -740,33 +737,33 @@
                 three-tier role system ensures the right people have the right access.</span>
               <span class="zh">从一个管理面板管理每位司机的资料、语言和凭证。三层角色系统确保正确的人拥有正确的访问权限。</span>
             </p>
-            <div class="feature-list">
-              <div class="feature-list-item">
+            <ul class="feature-list">
+              <li class="feature-list-item">
                 <div class="check" aria-hidden="true">✓</div>
                 <span class="en">Full driver CRUD — add, edit, delete from the admin panel</span>
                 <span class="zh">完整的司机CRUD——从管理面板添加、编辑、删除</span>
-              </div>
-              <div class="feature-list-item">
+              </li>
+              <li class="feature-list-item">
                 <div class="check" aria-hidden="true">✓</div>
                 <span class="en">Three roles: Driver, Admin, and SuperAdmin with scoped permissions</span>
                 <span class="zh">三种角色：司机、管理员和超级管理员，各有权限范围</span>
-              </div>
-              <div class="feature-list-item">
+              </li>
+              <li class="feature-list-item">
                 <div class="check" aria-hidden="true">✓</div>
                 <span class="en">bcrypt password hashing — passwords never stored in plain text</span>
                 <span class="zh">bcrypt密码哈希——密码从不以明文存储</span>
-              </div>
-              <div class="feature-list-item">
+              </li>
+              <li class="feature-list-item">
                 <div class="check" aria-hidden="true">✓</div>
                 <span class="en">Forced password reset on first login for all new accounts</span>
                 <span class="zh">所有新账户首次登录时强制重置密码</span>
-              </div>
-              <div class="feature-list-item">
+              </li>
+              <li class="feature-list-item">
                 <div class="check" aria-hidden="true">✓</div>
                 <span class="en">Session-based authentication stored securely in PostgreSQL</span>
                 <span class="zh">基于会话的身份验证，安全存储在PostgreSQL中</span>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -788,28 +785,28 @@
                 so you can make faster, better decisions for your fleet.</span>
               <span class="zh">管理仪表板一目了然地显示KPI、收入图表和司机绩效，让您能对车队做出更快、更好的决策。</span>
             </p>
-            <div class="feature-list">
-              <div class="feature-list-item">
+            <ul class="feature-list">
+              <li class="feature-list-item">
                 <div class="check" aria-hidden="true">✓</div>
                 <span class="en">KPI dashboard — total orders, revenue, active drivers, completion rate</span>
                 <span class="zh">KPI仪表板——总订单、收入、活跃司机、完成率</span>
-              </div>
-              <div class="feature-list-item">
+              </li>
+              <li class="feature-list-item">
                 <div class="check" aria-hidden="true">✓</div>
                 <span class="en">Revenue trend charts powered by Chart.js</span>
                 <span class="zh">由Chart.js提供支持的收入趋势图表</span>
-              </div>
-              <div class="feature-list-item">
+              </li>
+              <li class="feature-list-item">
                 <div class="check" aria-hidden="true">✓</div>
                 <span class="en">Per-driver performance reports with trip history and earnings</span>
                 <span class="zh">包含行程历史和收入的每位司机绩效报告</span>
-              </div>
-              <div class="feature-list-item">
+              </li>
+              <li class="feature-list-item">
                 <div class="check" aria-hidden="true">✓</div>
                 <span class="en">Filter reports by driver, date range, and transport type</span>
                 <span class="zh">按司机、日期范围和运输类型过滤报告</span>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
           <div class="feature-visual reveal reveal-delay-2" aria-hidden="true">
             <div class="feature-visual-inner">
@@ -909,7 +906,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="assets/brandlogo.png" alt="DizpatchGO Logo" class="logo-mark" loading="lazy" decoding="async"
+          <img src="assets/brandlogo-128.png" alt="DizpatchGO Logo" class="logo-mark" loading="lazy" decoding="async"
             width="38" height="38">
           <p class="en">DizpatchGO — Enterprise fleet dispatch management built for efficiency, compliance, and scale.
           </p>

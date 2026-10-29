@@ -6,19 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data: https://i.ytimg.com https://img.youtube.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com; connect-src 'self';">
+    content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' 'unsafe-inline'; img-src 'self' data: https://i.ytimg.com https://img.youtube.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com; connect-src 'self';">
   <title>DizpatchGO — Smart Fleet Dispatch Management</title>
   <link rel="canonical" href="https://dizpatchgo.com/">
   <meta name="description"
     content="DizpatchGO is an enterprise e-hailing dispatch management platform with smart driver matching, real-time GPS tracking, fleet compliance, and multilingual order management.">
   <meta name="robots" content="index, follow">
-  <link rel="icon" type="image/png" href="assets/brandlogo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/brandlogo-128.png">
+  <link rel="preload" href="assets/fonts/inter/inter-latin-v20.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" href="assets/DG_banner.webp" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="css/style.css?v=20260921">
+  <link rel="stylesheet" href="css/style.css?v=20261029-fonts">
   <style>
     /* Page-specific overrides */
     .testimonials-bg {
@@ -107,7 +104,7 @@
       <div class="container">
         <div class="nav-inner">
           <a href="index.html" class="nav-logo" aria-label="DizpatchGO home">
-            <img src="assets/brandlogo.png" alt="DizpatchGO Logo" class="logo-mark" width="36" height="36"
+            <img src="assets/brandlogo-128.png" alt="DizpatchGO Logo" class="logo-mark" width="36" height="36"
               decoding="async">
             <span class="logo-text">Dizpatch<span>GO</span></span>
           </a>
@@ -515,8 +512,8 @@
           </p>
         </div>
 
-        <div class="grid-3" role="list">
-          <article class="card feature-card reveal reveal-delay-1" role="listitem">
+        <ul class="grid-3">
+          <li class="card feature-card reveal reveal-delay-1">
             <div class="card-body">
               <div class="feature-icon feature-icon-teal" aria-hidden="true"><svg class="icon-svg"
                   style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
@@ -535,9 +532,9 @@
                 Assign the best driver in seconds.</p>
               <p class="zh">AI驱动的司机推荐，按GPS距离、语言匹配和座位容量排名。几秒内指派最佳司机。</p>
             </div>
-          </article>
+          </li>
 
-          <article class="card feature-card reveal reveal-delay-2" role="listitem">
+          <li class="card feature-card reveal reveal-delay-2">
             <div class="card-body">
               <div class="feature-icon feature-icon-blue" aria-hidden="true"><svg class="icon-svg"
                   style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
@@ -554,9 +551,9 @@
                 cancellation, reassignment, and audit trails.</p>
               <p class="zh">管理从创建到待处理、已分配、进行中和完成的全过程，支持取消、重新分配和审计追踪。</p>
             </div>
-          </article>
+          </li>
 
-          <article class="card feature-card reveal reveal-delay-3" role="listitem">
+          <li class="card feature-card reveal reveal-delay-3">
             <div class="card-body">
               <div class="feature-icon feature-icon-amber" aria-hidden="true"><svg class="icon-svg"
                   style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
@@ -573,9 +570,9 @@
                 before anything lapses.</p>
               <p class="zh">追踪整个车队的道路税、保险和车检到期日期，在任何事项失效前获得警报。</p>
             </div>
-          </article>
+          </li>
 
-          <article class="card feature-card reveal reveal-delay-1" role="listitem">
+          <li class="card feature-card reveal reveal-delay-1">
             <div class="card-body">
               <div class="feature-icon feature-icon-teal" aria-hidden="true"><svg class="icon-svg"
                   style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
@@ -591,9 +588,9 @@
                 Always know where your fleet is.</p>
               <p class="zh">司机共享实时位置数据，直接输入智能调度算法。随时了解您的车队位置。</p>
             </div>
-          </article>
+          </li>
 
-          <article class="card feature-card reveal reveal-delay-2" role="listitem">
+          <li class="card feature-card reveal reveal-delay-2">
             <div class="card-body">
               <div class="feature-icon feature-icon-violet" aria-hidden="true"><svg class="icon-svg"
                   style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
@@ -610,9 +607,9 @@
                 a smoother experience on every trip.</p>
               <p class="zh">根据客户首选语言——英语、马来语或中文——匹配司机，让每次出行更顺畅。</p>
             </div>
-          </article>
+          </li>
 
-          <article class="card feature-card reveal reveal-delay-3" role="listitem">
+          <li class="card feature-card reveal reveal-delay-3">
             <div class="card-body">
               <div class="feature-icon feature-icon-rose" aria-hidden="true"><svg class="icon-svg"
                   style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;"
@@ -627,8 +624,8 @@
                 in one place.</p>
               <p class="zh">记录服务历史、追踪里程、接收过期警报并管理交通传票——全部在一处管理。</p>
             </div>
-          </article>
-        </div>
+          </li>
+        </ul>
 
         <div class="flex-center" style="margin-top:40px">
           <a href="features.html" class="btn btn-outline">
@@ -783,6 +780,39 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════
+     FAQ
+═══════════════════════════════════════════════════ -->
+    <section class="section home-faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">
+            <span class="en">Common Questions</span><span class="zh">常见问题解答</span>
+          </div>
+          <h2 class="h2 text-navy" id="faq-heading"><span class="en">Frequently Asked Questions</span><span class="zh">常见问题</span></h2>
+          <p><span class="en">Got questions about DizpatchGO? We've got answers.</span><span class="zh">关于 DizpatchGO 的常见疑问与解答。</span></p>
+        </div>
+        <div class="grid-2 home-faq-grid">
+          <article class="home-faq-item">
+            <h3><span class="en">What is DizpatchGO?</span><span class="zh">什么是 DizpatchGO？</span></h3>
+            <p><span class="en">DizpatchGO is a fleet dispatch management platform for enterprise operations, with driver matching, GPS tracking, order management and fleet compliance tracking.</span><span class="zh">DizpatchGO 是面向企业运营的车队调度管理平台，提供司机匹配、GPS 追踪、订单管理和车队合规追踪功能。</span></p>
+          </article>
+          <article class="home-faq-item">
+            <h3><span class="en">How does DizpatchGO assign drivers?</span><span class="zh">DizpatchGO 如何指派司机？</span></h3>
+            <p><span class="en">DizpatchGO ranks available drivers using a scoring algorithm based on driving time, language compatibility and vehicle capacity.</span><span class="zh">DizpatchGO 使用评分算法，根据驾驶时间、语言兼容性和车辆容量对可用司机进行排名。</span></p>
+          </article>
+          <article class="home-faq-item">
+            <h3><span class="en">Can DizpatchGO track vehicle compliance?</span><span class="zh">DizpatchGO 可以追踪车辆合规情况吗？</span></h3>
+            <p><span class="en">Yes. It tracks vehicle road tax, insurance and Puspakom inspection expiry dates and alerts teams before they lapse.</span><span class="zh">可以。它可追踪车辆道路税、保险和 Puspakom 车检的到期日期，并在到期前提醒团队。</span></p>
+          </article>
+          <article class="home-faq-item">
+            <h3><span class="en">Where can I find pricing and driver app information?</span><span class="zh">在哪里可以查看价格和司机应用信息？</span></h3>
+            <p><span class="en">Visit the <a href="pricing.html">pricing page</a> for pricing information and the <a href="for-drivers.html">driver page</a> to learn about the driver app.</span><span class="zh">请访问<a href="pricing.html">价格页面</a>查看价格信息，或访问<a href="for-drivers.html">司机专区</a>了解司机应用。</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
      CTA BANNER
 ═══════════════════════════════════════════════════ -->
     <section class="section" aria-labelledby="cta-heading">
@@ -833,7 +863,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="assets/brandlogo.png" alt="DizpatchGO Logo" class="logo-mark" loading="lazy" decoding="async"
+          <img src="assets/brandlogo-128.png" alt="DizpatchGO Logo" class="logo-mark" loading="lazy" decoding="async"
             width="38" height="38">
           <p class="en">DizpatchGO is an enterprise fleet dispatch management platform built for efficiency, compliance,
             and scale.</p>
