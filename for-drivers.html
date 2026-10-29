@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; connect-src 'self';">
+  <title>For Drivers — DizpatchGO Mobile App</title>
+  <meta name="description"
+    content="Empower your fleet drivers with the DizpatchGO Driver App. One-tap availability, live GPS dispatch, clear order workflows, and self-service maintenance reporting.">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20260921">
+  <style>
+    /* Driver page specific styles */
+    .driver-hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .driver-visual-wrap {
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .driver-phone-glow {
+      position: absolute;
+      width: 280px;
+      height: 380px;
+      background: radial-gradient(circle, rgba(13, 148, 136, 0.2) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .step-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      position: relative;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .step-card:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-2px);
+      border-color: #cbd5e1;
+    }
+
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--bg-teal);
+      color: var(--teal-dark);
+      font-weight: 800;
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .faq-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+
+    .faq-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .faq-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    @media (max-width: 900px) {
+      .driver-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════════════ -->
+  <header>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <div class="container">
+        <div class="nav-inner">
+          <a href="index.html" class="nav-logo" aria-label="DizpatchGO home">
+            <img src="assets/brandlogo.png" alt="DizpatchGO Logo" class="logo-mark">
+            <span class="logo-text">Dizpatch<span>GO</span></span>
+          </a>
+
+          <div class="nav-links" role="menubar">
+            <a href="index.html" role="menuitem">
+              <span class="en">Home</span><span class="zh">首页</span>
+            </a>
+            <a href="features.html" role="menuitem">
+              <span class="en">Features</span><span class="zh">功能</span>
+            </a>
+            <a href="for-drivers.html" class="active" role="menuitem">
+              <span class="en">For Drivers</span><span class="zh">司机专区</span>
+            </a>
+            <a href="contact.html" role="menuitem">
+              <span class="en">Contact</span><span class="zh">联系我们</span>
+            </a>
+          </div>
+
+          <div class="nav-cta">
+            <button class="lang-switch" id="langSwitchBtn" type="button" aria-label="Switch language">中文</button>
+            <a href="https://vehicle-management-system.dizpatchgo.com/" class="nav-login"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg><span class="en">Login</span><span class="zh">登录</span></a>
+            <a href="contact.html" class="btn btn-primary btn-sm">
+              <span class="en">Request Demo</span><span class="zh">申请演示</span>
+            </a>
+          </div>
+
+          <button class="hamburger" id="hamburgerBtn" type="button" aria-label="Open menu" aria-expanded="false"
+            aria-controls="mobileMenu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobileMenu" role="menu">
+        <a href="index.html" role="menuitem"><span class="en">Home</span><span class="zh">首页</span></a>
+        <a href="features.html" role="menuitem"><span class="en">Features</span><span class="zh">功能</span></a>
+        <a href="for-drivers.html" role="menuitem"><span class="en">For Drivers</span><span class="zh">司机专区</span></a>
+        <a href="contact.html" role="menuitem"><span class="en">Contact</span><span class="zh">联系我们</span></a>
+        <button class="lang-switch" id="mobileLangSwitchBtn" type="button"
+          style="margin-top:8px;padding:8px 0;text-align:left;background:none;border:none;color:var(--teal);font-weight:700;">Switch
+          to 中文</button>
+        <a href="https://vehicle-management-system.dizpatchgo.com/" class="nav-login"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg><span class="en">Login</span><span class="zh">登录</span></a>
+        <a href="contact.html" class="btn btn-primary btn-sm" style="margin-top:10px;"><span class="en">Request
+            Demo</span><span class="zh">申请演示</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ═══════════════════════════════════════════════════
+     PAGE HERO
+═══════════════════════════════════════════════════ -->
+    <section class="page-hero" aria-labelledby="driver-hero-heading">
+      <div class="container">
+        <div class="page-hero-label">
+          <span class="badge badge-teal">
+            <span class="en"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg> Mobile App Experience</span>
+            <span class="zh"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg> 移动端应用体验</span>
+          </span>
+        </div>
+        <h1 class="h1" id="driver-hero-heading">
+          <span class="en">Built for Drivers. <span class="gradient-text">Designed for Ease.</span></span>
+          <span class="zh">专为司机打造，<span class="gradient-text">极致简便流畅</span></span>
+        </h1>
+        <p>
+          <span class="en">A distraction-free mobile interface that gives drivers clear trip instructions, 1-tap status
+            switching, real-time dispatch updates, and hassle-free vehicle maintenance reporting.</span>
+          <span class="zh">无干扰的移动界面，为司机提供清晰的行程指令、一键切换接单状态、实时调度更新以及便捷的车辆保养申报。</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+     APP SHOWCASE HERO
+═══════════════════════════════════════════════════ -->
+    <section class="section" style="padding-top: 40px;">
+      <div class="container">
+        <div class="driver-hero-grid">
+          <div class="reveal">
+            <div class="section-label">
+              <span class="en">Core Driver Capabilities</span>
+              <span class="zh">核心司机功能</span>
+            </div>
+            <h2 class="h2" style="color:var(--navy);margin-bottom:20px;">
+              <span class="en">Everything a professional driver needs in one screen</span>
+              <span class="zh">专业司机所需的一切，尽在一屏掌控</span>
+            </h2>
+            <p class="body-lg text-muted" style="margin-bottom:28px;">
+              <span class="en">No complicated menus. Drivers receive new assignments with clear pickup notes, customer
+                language preferences, and one-touch progress buttons.</span>
+              <span class="zh">告别复杂繁琐的多层菜单。司机可清晰接收派单信息、上车备注、乘客语言偏好及一键推进状态按钮。</span>
+            </p>
+
+            <div class="feature-list">
+              <div class="feature-list-item">
+                <span class="check" aria-hidden="true">✓</span>
+                <div>
+                  <strong><span class="en">1-Tap Online / Offline Status</span><span
+                      class="zh">一键上下线状态切换</span></strong>
+                  <p class="caption"><span class="en">Instantly let operations know when you are available, on break, or
+                      off duty.</span><span class="zh">即时告知调度后台当前是可接单、休息还是已下班。</span></p>
+                </div>
+              </div>
+              <div class="feature-list-item">
+                <span class="check" aria-hidden="true">✓</span>
+                <div>
+                  <strong><span class="en">Smart GPS Location Sync</span><span class="zh">智能后台 GPS 同步</span></strong>
+                  <p class="caption"><span class="en">Automatic battery-friendly background location sharing ensures
+                      optimal nearby dispatching.</span><span class="zh">低功耗后台位置自动同步，确保系统为您分配最优就近订单。</span></p>
+                </div>
+              </div>
+              <div class="feature-list-item">
+                <span class="check" aria-hidden="true">✓</span>
+                <div>
+                  <strong><span class="en">Assigned, Ongoing &amp; History Tabs</span><span
+                      class="zh">待接、进行中与历史订单清晰分类</span></strong>
+                  <p class="caption"><span class="en">Organize current tasks and review past completed rides, fares, and
+                      passenger details.</span><span class="zh">井井有条地组织当下任务，随时回溯已完成行程、车费与乘客明细。</span></p>
+                </div>
+              </div>
+              <div class="feature-list-item">
+                <span class="check" aria-hidden="true">✓</span>
+                <div>
+                  <strong><span class="en">Multilingual Profile Preferences</span><span
+                      class="zh">多语言接单偏好</span></strong>
+                  <p class="caption"><span class="en">Set English, Malay, or Chinese capabilities so admins match you
+                      with the right passengers.</span><span class="zh">支持设定英语、马来语、中文语言能力，便于系统精准匹配乘客。</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phone Mockup Visual -->
+          <div class="driver-visual-wrap reveal reveal-delay-1">
+            <div class="driver-phone-glow"></div>
+            <div class="phone-frame" style="position:relative;z-index:1;">
+              <div class="phone-screen">
+                <div class="phone-status-bar">
+                  <span>9:41</span>
+                  <span><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/><path d="M22 20V4"/></svg> 5G <svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="7" width="18" height="10" rx="2"/><path d="M22 11v2"/></svg> 98%</span>
+                </div>
+                <div class="phone-topbar">
+                  <div class="driver-info">
+                    <span class="dname">Ahmad Zulkifli</span>
+                    <span class="dsub">Toyota Camry (VEE 8892)</span>
+                  </div>
+                  <div class="toggle-pill">
+                    <span class="status-dot" aria-hidden="true"></span> <span class="en">ONLINE</span><span class="zh">接单中</span>
+                  </div>
+                </div>
+                <div class="phone-body">
+                  <div class="phone-tabs">
+                    <div class="phone-tab"><span class="en">Assigned (1)</span><span class="zh">待接 (1)</span></div>
+                    <div class="phone-tab inactive"><span class="en">Ongoing</span><span class="zh">进行中</span></div>
+                    <div class="phone-tab inactive"><span class="en">History</span><span class="zh">历史</span></div>
+                  </div>
+
+                  <!-- Active Assignment Card -->
+                  <div class="mini-order-card">
+                    <div class="flex-between" style="margin-bottom:6px;">
+                      <span style="font-size:9px;font-weight:700;color:var(--navy);">#DG-8842</span>
+                      <span class="badge badge-teal" style="font-size:7px;padding:2px 6px;">VIP Sedan</span>
+                    </div>
+                    <div class="mini-order-row">
+                      <div class="mini-dot pickup"></div>
+                      <div class="mini-text"><strong>Pickup:</strong> KL Sentral, Station Lobby</div>
+                    </div>
+                    <div class="mini-order-row">
+                      <div class="mini-dot dropoff"></div>
+                      <div class="mini-text"><strong>Dropoff:</strong> Menara Petronas 3, KLCC</div>
+                    </div>
+                    <div style="font-size:7.5px;color:var(--muted);margin:4px 0;">
+                      <span><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Mr. Jason Chen (ZH/EN)</span> • <span><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 10:15 AM</span>
+                    </div>
+                    <div class="phone-btn" style="cursor:pointer;">
+                      <span class="en">Accept &amp; Navigate →</span>
+                      <span class="zh">接单并开始导航 →</span>
+                    </div>
+                  </div>
+
+                  <!-- Upcoming / Scheduled Card -->
+                  <div class="mini-order-card" style="opacity:0.9;">
+                    <div class="flex-between" style="margin-bottom:4px;">
+                      <span style="font-size:8px;font-weight:600;color:var(--navy);">Next: #DG-8849</span>
+                      <span style="font-size:7px;color:var(--teal);font-weight:700;">Scheduled</span>
+                    </div>
+                    <div style="font-size:7.5px;color:var(--muted);">
+                      <svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Pavilion KL → KLIA Terminal 1 (2:30 PM)
+                    </div>
+                  </div>
+
+                  <!-- Maintenance Notification -->
+                  <div
+                    style="background:#fef3c7;border-radius:6px;padding:6px 8px;display:flex;align-items:center;gap:6px;">
+                    <span style="font-size:10px;"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+                    <span style="font-size:7px;color:#92400e;font-weight:600;">
+                      <span class="en">Service due in 850 km</span>
+                      <span class="zh">距离下次保养还剩 850 公里</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+     DRIVER WORKFLOW STEPS
+═══════════════════════════════════════════════════ -->
+    <section class="section" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">
+            <span class="en">Driver Onboarding</span>
+            <span class="zh">司机入驻与使用流程</span>
+          </div>
+          <h2 class="h2">
+            <span class="en">Start driving in 3 simple steps</span>
+            <span class="zh">简单三步，即刻上线接单</span>
+          </h2>
+          <p>
+            <span class="en">Designed for rapid enterprise deployment with built-in credential security.</span>
+            <span class="zh">专为企业高效部署打造，内置首登强制密码重置等企业级安全机制。</span>
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="step-card reveal">
+            <div class="step-badge">1</div>
+            <h3 class="h3" style="color:var(--navy);margin-bottom:12px;">
+              <span class="en">Receive Fleet Invite</span>
+              <span class="zh">接收车队邀请与凭证</span>
+            </h3>
+            <p class="body-sm text-muted">
+              <span class="en">Your fleet operations manager creates your account in the admin console and assigns your
+                vehicle profile and phone credentials.</span>
+              <span class="zh">车队管理后台为您创建专属账号，并绑定相应运营车辆与手机凭证。</span>
+            </p>
+          </div>
+
+          <div class="step-card reveal reveal-delay-1">
+            <div class="step-badge">2</div>
+            <h3 class="h3" style="color:var(--navy);margin-bottom:12px;">
+              <span class="en">First Login Security</span>
+              <span class="zh">首登重置安全密码</span>
+            </h3>
+            <p class="body-sm text-muted">
+              <span class="en">Log in using the temporary credentials. DizpatchGO enforces a mandatory password change
+                on first sign-in to protect your profile.</span>
+              <span class="zh">使用初始临时密码登录，系统将强制提示修改个人密码，全面保障账户与数据安全。</span>
+            </p>
+          </div>
+
+          <div class="step-card reveal reveal-delay-2">
+            <div class="step-badge">3</div>
+            <h3 class="h3" style="color:var(--navy);margin-bottom:12px;">
+              <span class="en">Go Online &amp; Accept Rides</span>
+              <span class="zh">开启接单与行程履约</span>
+            </h3>
+            <p class="body-sm text-muted">
+              <span class="en">Toggle your status to "Online". You'll receive matched assignments with real-time GPS
+                routing, guest language notes, and seamless trip completion.</span>
+              <span class="zh">轻触切换至“接单中”，实时接收智能推荐订单，享受精准定位指引与顺畅履约。</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+     DRIVER BENEFITS / FEATURES GRID
+═══════════════════════════════════════════════════ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">
+            <span class="en">Driver App Highlights</span>
+            <span class="zh">司机端亮点功能</span>
+          </div>
+          <h2 class="h2">
+            <span class="en">Everything built for on-the-road efficiency</span>
+            <span class="zh">专注于行车途中的便捷与高效</span>
+          </h2>
+          <p>
+            <span class="en">Less administrative friction means your drivers can focus 100% on safety and passenger
+              satisfaction.</span>
+            <span class="zh">减少繁琐的行政操作，让司机能够全心专注于行车安全与乘客优质服务。</span>
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card feature-card reveal">
+            <div class="card-body">
+              <div class="feature-icon feature-icon-teal"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg></div>
+              <h3>
+                <span class="en">Instant Trip Progression</span>
+                <span class="zh">一键推进行程状态</span>
+              </h3>
+              <p>
+                <span class="en">Clear, prominent buttons for "Arrived at Pickup", "Trip Started", and "Completed". No
+                  complex multi-screen confirmations.</span>
+                <span class="zh">“已到达上车点”、“已接到乘客”、“行程已结束”大按钮清晰易触，无需繁琐层级确认。</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="card feature-card reveal reveal-delay-1">
+            <div class="card-body">
+              <div class="feature-icon feature-icon-amber"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+              <h3>
+                <span class="en">In-App Maintenance Reports</span>
+                <span class="zh">应用内故障与保养上报</span>
+              </h3>
+              <p>
+                <span class="en">Notice tire wear or brake issues? Submit a quick maintenance report directly from the
+                  app so the workshop can schedule repairs immediately.</span>
+                <span class="zh">发现轮胎磨损或刹车异响？司机可直接在手机端快速提交保养需求，车队工坊即刻跟进。</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="card feature-card reveal reveal-delay-2">
+            <div class="card-body">
+              <div class="feature-icon feature-icon-blue"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></svg></div>
+              <h3>
+                <span class="en">Passenger Language Matching</span>
+                <span class="zh">语言偏好精准对接</span>
+              </h3>
+              <p>
+                <span class="en">View passenger language badges (English, Mandarin, Malay) before arriving, ensuring
+                  courteous and clear communication every trip.</span>
+                <span class="zh">在到达前即可获知乘客语言偏好（英语、中文、马来语），从容提供体贴专业的沟通体验。</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="card feature-card reveal">
+            <div class="card-body">
+              <div class="feature-icon feature-icon-violet"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2 4 5v6c0 5.25 3.4 9.74 8 11 4.6-1.26 8-5.75 8-11V5Z"/></svg></div>
+              <h3>
+                <span class="en">Vehicle Compliance Alerts</span>
+                <span class="zh">合规与年检到期提醒</span>
+              </h3>
+              <p>
+                <span class="en">View assigned vehicle road tax, insurance, and Puspakom inspection statuses directly in
+                  your profile so you never drive non-compliant vehicles.</span>
+                <span class="zh">个人主页可随时查看所驾车辆的路税、保险与 Puspakom 验车有效期，杜绝违规上路风险。</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="card feature-card reveal reveal-delay-1">
+            <div class="card-body">
+              <div class="feature-icon feature-icon-rose"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></div>
+              <h3>
+                <span class="en">Trip Summary &amp; Earnings</span>
+                <span class="zh">行程统计与数据回溯</span>
+              </h3>
+              <p>
+                <span class="en">Daily and weekly ride counts, completed distance, and trip history stored transparently
+                  in your driver history tab.</span>
+                <span class="zh">每日与每周完成单量、行驶总里程及历史单据透明记录，方便核算。</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="card feature-card reveal reveal-delay-2">
+            <div class="card-body">
+              <div class="feature-icon feature-icon-navy"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+              <h3>
+                <span class="en">Strict Privacy &amp; Security</span>
+                <span class="zh">严密隐私与账号安全</span>
+              </h3>
+              <p>
+                <span class="en">GPS location is only shared when toggled "Online". Passenger contact numbers are
+                  protected through secure internal dispatch channels.</span>
+                <span class="zh">仅在“上线”状态下同步定位；乘客联系方式通过内部安全调度通道保护，严守隐私。</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+     DRIVER FAQ SECTION
+═══════════════════════════════════════════════════ -->
+    <section class="section" style="background: var(--bg-subtle);">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">
+            <span class="en">Common Questions</span>
+            <span class="zh">常见问题解答</span>
+          </div>
+          <h2 class="h2">
+            <span class="en">Frequently Asked Questions for Drivers</span>
+            <span class="zh">司机常见问题</span>
+          </h2>
+          <p>
+            <span class="en">Got questions about using the DizpatchGO Driver App? We've got answers.</span>
+            <span class="zh">关于使用 DizpatchGO 司机端应用的常见疑问与解答。</span>
+          </p>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-card reveal">
+            <h3>
+              <span class="en">How do I get my login credentials?</span>
+              <span class="zh">我该如何获取司机端登录账号？</span>
+            </h3>
+            <p>
+              <span class="en">Your fleet administrator will create your profile in the DizpatchGO admin portal and
+                supply your initial login phone number and password.</span>
+              <span class="zh">您的车队运营管理员会在后台为您配置专属账号，并将初始账号及临时密码发放给您。</span>
+            </p>
+          </div>
+
+          <div class="faq-card reveal reveal-delay-1">
+            <h3>
+              <span class="en">Does the app track my location when I am offline?</span>
+              <span class="zh">下线或休息时，App 还会追踪我的定位吗？</span>
+            </h3>
+            <p>
+              <span class="en">No. GPS location tracking is strictly active only when you switch your toggle to "Online"
+                or during an active ongoing trip assignment.</span>
+              <span class="zh">不会。GPS 位置同步仅在您主动开启“接单中”或处于执行订单期间启用，充分保护司机私人休息时间。</span>
+            </p>
+          </div>
+
+          <div class="faq-card reveal">
+            <h3>
+              <span class="en">Can I report vehicle mechanical issues in the app?</span>
+              <span class="zh">如果车辆出现故障，可以直接在 App 内报修吗？</span>
+            </h3>
+            <p>
+              <span class="en">Yes. The app has a dedicated "Submit Maintenance" feature where you can select issue
+                categories (brakes, tires, engine, air conditioning) and enter notes for your fleet workshop.</span>
+              <span class="zh">可以。App 提供便捷的“保养报修”功能，您可直接选择故障类型（刹车、轮胎、发动机、空调等）并提交备注，直接同步给车队后勤。</span>
+            </p>
+          </div>
+
+          <div class="faq-card reveal reveal-delay-1">
+            <h3>
+              <span class="en">What devices are supported?</span>
+              <span class="zh">支持哪些手机与操作系统？</span>
+            </h3>
+            <p>
+              <span class="en">DizpatchGO Driver works smoothly on modern Android and iOS smartphones with responsive,
+                lightweight battery-optimized performance.</span>
+              <span class="zh">DizpatchGO 司机端全面适配主流 Android 与 iOS 智能手机，经过深度功耗优化，省电流畅。</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+     CTA BANNER
+═══════════════════════════════════════════════════ -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <h2 class="h2">
+            <span class="en">Equip your fleet drivers with modern tools</span>
+            <span class="zh">为您的车队司机配备现代化智能调度工具</span>
+          </h2>
+          <p>
+            <span class="en">See how DizpatchGO can streamline your fleet dispatching, cut response times, and keep
+              drivers happy.</span>
+            <span class="zh">体验 DizpatchGO 如何精简车队调度流程、缩短响应时间并提升司乘满意度。</span>
+          </p>
+          <div class="cta-banner-actions">
+            <a href="contact.html" class="btn btn-white btn-lg">
+              <span class="en"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 4H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3"/><path d="M9 12h6"/><path d="M9 16h6"/><path d="M9 8h1"/></svg> Request Fleet Demo</span>
+              <span class="zh"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 4H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3"/><path d="M9 12h6"/><path d="M9 16h6"/><path d="M9 8h1"/></svg> 申请车队演示</span>
+            </a>
+            <a href="features.html" class="btn btn-ghost btn-lg">
+              <span class="en">Explore All Features</span>
+              <span class="zh">探索全部功能</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/brandlogo.png" alt="DizpatchGO Logo" class="logo-mark">
+          <p class="en">DizpatchGO is an enterprise fleet dispatch management platform built for efficiency, compliance,
+            and scale.</p>
+          <p class="zh">DizpatchGO 是一个专为效率、合规和规模化设计的企业车队调度管理平台。</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="en">Product</h4>
+          <h4 class="zh">产品</h4>
+          <ul>
+            <li><a href="features.html"><span class="en">Features</span><span class="zh">功能</span></a></li>
+            <li><a href="for-drivers.html"><span class="en">For Drivers</span><span class="zh">司机专区</span></a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="en">Company</h4>
+          <h4 class="zh">公司</h4>
+          <ul>
+            <li><a href="contact.html"><span class="en">Contact Us</span><span class="zh">联系我们</span></a></li>
+            <li><a href="contact.html"><span class="en">Request Demo</span><span class="zh">申请演示</span></a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="en">Legal</h4>
+          <h4 class="zh">法律</h4>
+          <ul>
+            <li><a href="privacy-policy.html"><span class="en">Privacy Policy</span><span class="zh">隐私政策</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="en">&copy; 2026 DizpatchGO. All rights reserved.</p>
+        <p class="zh">&copy; 2026 DizpatchGO. 保留所有权利。</p>
+        <div class="footer-bottom-links">
+          <a href="privacy-policy.html" rel="noopener noreferrer"><span class="en">Privacy</span><span class="zh">隐私</span></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.link/zyk4vm" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"
+     style="position:fixed;right:24px;bottom:24px;width:56px;height:56px;min-width:56px;min-height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.28);z-index:999;line-height:0;">
+    <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false" style="display:block;width:30px;height:30px;flex-shrink:0;">
+      <path fill="#fff" d="M16 3C9.1 3 3.5 8.6 3.5 15.5c0 2.7.9 5.3 2.5 7.4L4.5 28l5.3-1.4c2 1.1 4.3 1.7 6.6 1.7 6.9 0 12.5-5.6 12.5-12.5S22.9 3 16 3z"/>
+      <path fill="#25d366" d="M21.4 18.2c-.4-.2-2.2-1.1-2.6-1.2-.3-.1-.6-.2-.9.2-.3.4-1 1.2-1.2 1.4-.2.2-.4.3-.8.1-2.1-1.1-3.5-1.9-4.9-4.3-.4-.6.4-.6 1-1.9.1-.3 0-.5-.1-.7-.1-.2-.8-2-1.2-2.7-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.6.1-.9.4-.3.3-1.3 1.3-1.3 3 0 1.8 1.3 3.5 1.5 3.7.2.3 2.4 3.7 5.9 5.1 3.5 1.3 3.5.9 4.6.8 1.2-.1 2.2-.9 2.5-1.7.3-.7.3-1.4.2-1.6-.1-.2-.4-.3-.5-.3z"/>
+    </svg>
+  </a>
+
+
+  <script src="js/nav.js?v=20260921"></script>
+</body>
+
+</html>

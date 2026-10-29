@@ -1,0 +1,32 @@
+# ================================================================
+# DizpatchGO — Apache Web Server Security Configuration (.htaccess)
+# ================================================================
+
+# 1. Prevent directory browsing/indexing
+Options -Indexes
+
+# 2. Block direct web access to sensitive configuration and system files
+<FilesMatch "^(config\.php|\.env|\.git.*|composer\.(json|lock)|.*\.log|.*\.ini)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# 3. Security Headers
+<IfModule mod_headers.c>
+    # Prevent MIME-type sniffing
+    Header always set X-Content-Type-Options "nosniff"
+    # Clickjacking protection
+    Header always set X-Frame-Options "SAMEORIGIN"
+    # XSS filter
+    Header always set X-XSS-Protection "1; mode=block"
+    # Referrer policy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# 4. Default character set
+AddDefaultCharset UTF-8

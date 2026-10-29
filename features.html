@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; connect-src 'self';">
+  <title>Features — DizpatchGO</title>
+  <meta name="description"
+    content="Explore DizpatchGO's full feature set: smart dispatch, fleet compliance, order management, multilingual support, GPS tracking, analytics, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20260921">
+  <style>
+    .feature-section {
+      padding: 80px 0;
+    }
+
+    .feature-section:nth-child(even) {
+      background: var(--bg-subtle);
+    }
+
+    .feature-visual-inner {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .mock-card {
+      background: rgba(255, 255, 255, .08);
+      border-radius: 10px;
+      padding: 14px 16px;
+      border: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .mock-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .mock-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .mock-label {
+      font-size: 9px;
+      color: rgba(255, 255, 255, .5);
+      width: 60px;
+      flex-shrink: 0;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .mock-val {
+      font-size: 10px;
+      color: rgba(255, 255, 255, .85);
+      font-weight: 600;
+    }
+
+    .mock-badge {
+      font-size: 8px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    .mock-badge.green {
+      background: rgba(16, 185, 129, .25);
+      color: #6ee7b7;
+    }
+
+    .mock-badge.amber {
+      background: rgba(245, 158, 11, .25);
+      color: #fcd34d;
+    }
+
+    .mock-badge.red {
+      background: rgba(239, 68, 68, .25);
+      color: #fca5a5;
+    }
+
+    .mock-badge.blue {
+      background: rgba(59, 130, 246, .25);
+      color: #93c5fd;
+    }
+
+    .mock-badge.teal {
+      background: rgba(13, 148, 136, .35);
+      color: #5eead4;
+    }
+
+    .mock-pill-row {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .mock-title {
+      font-size: 10px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .6);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: 10px;
+    }
+
+    .mock-bar-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .mock-bar-track {
+      flex: 1;
+      height: 5px;
+      background: rgba(255, 255, 255, .1);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .mock-bar-fill {
+      height: 100%;
+      border-radius: 999px;
+    }
+
+    .mock-divider {
+      height: 1px;
+      background: rgba(255, 255, 255, .08);
+      margin: 10px 0;
+    }
+
+    .mock-driver-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .mock-driver-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .mock-driver-name {
+      font-size: 10px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .85);
+    }
+
+    .mock-driver-sub {
+      font-size: 8px;
+      color: rgba(255, 255, 255, .45);
+    }
+
+    .mock-star {
+      font-size: 8px;
+      color: var(--teal);
+      font-weight: 800;
+    }
+
+    .compliance-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .compliance-label {
+      font-size: 9px;
+      color: rgba(255, 255, 255, .6);
+    }
+
+    .compliance-date {
+      font-size: 9px;
+      color: rgba(255, 255, 255, .5);
+    }
+
+    .feature-section-header {
+      margin-bottom: 48px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <div class="container">
+        <div class="nav-inner">
+          <a href="index.html" class="nav-logo" aria-label="DizpatchGO home">
+            <img src="assets/brandlogo.png" alt="DizpatchGO Logo" class="logo-mark">
+            <span class="logo-text">Dizpatch<span>GO</span></span>
+          </a>
+          <div class="nav-links" role="menubar">
+            <a href="index.html" role="menuitem"><span class="en">Home</span><span class="zh">首页</span></a>
+            <a href="features.html" class="active" role="menuitem"><span class="en">Features</span><span
+                class="zh">功能</span></a>
+            <a href="for-drivers.html" role="menuitem"><span class="en">For Drivers</span><span
+                class="zh">司机专区</span></a>
+            <a href="contact.html" role="menuitem"><span class="en">Contact</span><span class="zh">联系我们</span></a>
+          </div>
+          <div class="nav-cta">
+            <button class="lang-switch" id="langSwitchBtn" type="button" aria-label="Switch language">中文</button>
+            <a href="https://vehicle-management-system.dizpatchgo.com/" class="nav-login"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg><span class="en">Login</span><span class="zh">登录</span></a>
+            <a href="contact.html" class="btn btn-primary btn-sm"><span class="en">Request Demo</span><span
+                class="zh">申请演示</span></a>
+          </div>
+          <button class="hamburger" id="hamburgerBtn" type="button" aria-label="Open menu" aria-expanded="false"
+            aria-controls="mobileMenu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobileMenu" role="menu">
+        <a href="index.html" role="menuitem"><span class="en">Home</span><span class="zh">首页</span></a>
+        <a href="features.html" role="menuitem"><span class="en">Features</span><span class="zh">功能</span></a>
+        <a href="for-drivers.html" role="menuitem"><span class="en">For Drivers</span><span class="zh">司机专区</span></a>
+        <a href="contact.html" role="menuitem"><span class="en">Contact</span><span class="zh">联系我们</span></a>
+        <button class="lang-switch" id="mobileLangSwitchBtn" type="button"
+          style="margin-top:8px;padding:8px 0;text-align:left;background:none;border:none;color:var(--teal);font-weight:700;">Switch
+          to 中文</button>
+        <a href="https://vehicle-management-system.dizpatchgo.com/" class="nav-login"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg><span class="en">Login</span><span class="zh">登录</span></a>
+        <a href="contact.html" class="btn btn-primary btn-sm" style="margin-top:10px;"><span class="en">Request
+            Demo</span><span class="zh">申请演示</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" aria-labelledby="page-heading">
+      <div class="container">
+        <div class="page-hero-label">
+          <span class="badge badge-teal"><span class="en">Platform Features</span><span class="zh">平台功能</span></span>
+        </div>
+        <h1 class="h1 text-navy" id="page-heading">
+          <span class="en">Every tool your<br>dispatch team needs</span>
+          <span class="zh">调度团队所需的<br>每一个工具</span>
+        </h1>
+        <p>
+          <span class="en">DizpatchGO is purpose-built for enterprise fleet operations — handling everything from
+            AI-powered driver matching to full fleet compliance monitoring.</span>
+          <span class="zh">DizpatchGO 专为企业车队运营设计，处理从AI驱动的司机匹配到完整车队合规监控的一切事务。</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ─── FEATURE 1: Smart Dispatch ─── -->
+    <section class="feature-section" aria-labelledby="feat1-heading">
+      <div class="container">
+        <div class="feature-row">
+          <div class="feature-content reveal">
+            <div class="section-label"><span class="en">Smart Dispatch</span><span class="zh">智能调度</span></div>
+            <h2 class="h2 text-navy" id="feat1-heading">
+              <span class="en">AI-powered driver assignment</span>
+              <span class="zh">AI驱动的司机指派</span>
+            </h2>
+            <p style="color:var(--muted);margin-top:14px;font-size:1.0625rem">
+              <span class="en">Stop guessing which driver to send. DizpatchGO uses Google Maps Distance Matrix API and a
+                scoring algorithm to rank available drivers by real driving time, language compatibility, and vehicle
+                capacity.</span>
+              <span class="zh">不再猜测该派哪位司机。DizpatchGO 使用谷歌地图距离矩阵API和评分算法，按实际驾驶时间、语言兼容性和车辆容量对可用司机进行排名。</span>
+            </p>
+            <div class="feature-list">
+              <div class="feature-list-item">
+                <div class="check" aria-hidden="true">✓</div>
+                <span class="en">Ranks top 5 nearest drivers by real driving time — not straight-line distance</span>
+                <span class="zh">按实际驾驶时间（非直线距离）排列最近的5位司机</span>
+              </div>
+              <div class="feature-list-item">
+                <div class="check" aria-hidden="true">✓</div>
+                <span class="en">Language match indicator — ensure driver speaks client's language</span>
+                <span class="zh">语言匹配指标——确保司机会说客户的语言</span>
+              </div>
+              <div class="feature-list-item">
+                <div class="check" aria-hidden="true">✓</div>
+                <span class="en">Capacity check — only suggest vehicles that fit the requested seats</span>
+                <span class="zh">容量检查——仅推荐满足所需座位数的车辆</span>
+              </div>
+              <div class="feature-list-item">
+                <div class="check" aria-hidden="true">✓</div>
+                <span class="en">Conflict detection — checks for overlapping scheduled trips</span>
+                <span class="zh">冲突检测——检查排期行程是否有重叠</span>
+              </div>
+              <div class="feature-list-item">
+                <div class="check" aria-hidden="true">✓</div>
+                <span class="en">50km radius filter to reduce irrelevant API calls and costs</span>
+                <span class="zh">50公里半径过滤，减少不必要的API调用和成本</span>
+              </div>
+            </div>
+          </div>
+          <div class="feature-visual reveal reveal-delay-2" aria-hidden="true">
+            <div class="feature-visual-inner">
+              <div class="mock-title"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg> Smart Assign — Top Suggestions</div>
+              <!-- Driver 1 (Best match) -->
+              <div class="mock-card" style="border-color:rgba(13,148,136,.4)">
+                <div class="mock-driver-row">
+                  <div class="mock-driver-info">
+                    <div class="mock-driver-name">Ahmad Razif</div>
+                    <div class="mock-driver-sub">Toyota Alphard · WXY 1234 · 7 seats</div>
+                  </div>
+                  <div>
+                    <div class="mock-star">⭐ Top Match</div>
+                  </div>
+                </div>
+                <div class="mock-pill-row">
+                  <span class="mock-badge teal"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></svg> Language Match</span>
+                  <span class="mock-badge teal"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> 4.2 km · 8 min</span>
+                  <span class="mock-badge green">Available</span>
+                </div>
+              </div>
+              <!-- Driver 2 -->
+              <div class="mock-card">
+                <div class="mock-driver-row">
+                  <div class="mock-driver-info">
+                    <div class="mock-driver-name">David Lim</div>
+                    <div class="mock-driver-sub">Honda Odyssey · WMK 5678 · 7 seats</div>
+                  </div>
+                </div>
+                <div class="mock-pill-row">
+                  <span class="mock-badge amber"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg> Lang Mismatch</span>
+                  <span class="mock-badge blue"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> 6.1 km · 11 min</span>
+                  <span class="mock-badge green">Available</span>
+                </div>
+              </div>
+              <!-- Driver 3 -->
+              <div class="mock-card">
+                <div class="mock-driver-row">
+                  <div class="mock-driver-info">
+                    <div class="mock-driver-name">Raj Kumar</div>
+                    <div class="mock-driver-sub">Toyota Hiace · WRT 9101 · 10 seats</div>
+                  </div>
+                </div>
+                <div class="mock-pill-row">
+                  <span class="mock-badge teal"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></svg> Language Match</span>
+                  <span class="mock-badge blue"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> 9.3 km · 14 min</span>
+                  <span class="mock-badge amber">Finishing trip in ~6min</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FEATURE 2: Order Lifecycle ─── -->
+    <section class="feature-section" aria-labelledby="feat2-heading">
+      <div class="container">
+        <div class="feature-row">
+          <div class="feature-visual reveal" aria-hidden="true" style="order:-1 ;">
+            <div class="feature-visual-inner">
+              <div class="mock-title"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="M3.3 7 12 12l8.7-5"/><path d="M12 22V12"/></svg> Order Lifecycle Pipeline</div>
+              <div style="display:flex;flex-direction:column;gap:8px;">
+                <div class="mock-card" style="border-left:3px solid #fbbf24">
+                  <div class="mock-row">
+                    <span class="mock-label">Status</span>
+                    <span class="mock-badge amber">Pending</span>
+                  </div>
+                  <div class="mock-row"><span class="mock-label">Client</span><span class="mock-val">Wong Li Shan</span>
+                  </div>
+                  <div class="mock-row"><span class="mock-label">Route</span><span class="mock-val"
+                      style="font-size:8px">KLCC → KL Sentral</span></div>
+                  <div class="mock-row"><span class="mock-label">Type</span><span class="mock-val">Point-to-Point</span>
+                  </div>
+                </div>
+                <div class="mock-card" style="border-left:3px solid #5eead4">
+                  <div class="mock-row">
+                    <span class="mock-label">Status</span>
+                    <span class="mock-badge teal">Assigned</span>
+                  </div>
+                  <div class="mock-row"><span class="mock-label">Driver</span><span class="mock-val">Ahmad Razif</span>
+                  </div>
+                  <div class="mock-row"><span class="mock-label">Vehicle</span><span class="mock-val">WXY 1234 ·
+                      Alphard</span></div>
+                  <div class="mock-row"><span class="mock-label">Sched.</span><span class="mock-val">Today 14:30</span>
+                  </div>
+                </div>
+                <div class="mock-card" style="border-left:3px solid #93c5fd">
+                  <div class="mock-row">
+                    <span class="mock-label">Status</span>
+                    <span class="mock-badge blue">Ongoing</span>
+                  </div>
+                  <div class="mock-row"><span class="mock-label">Started</span><span class="mock-val">14:32</span></div>
+                  <div class="mock-row"><span class="mock-label">ETA</span><span class="mock-val">~25 min</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feature-content reveal reveal-delay-2">
+            <div class="section-label"><span class="en">Order Management</span><span class="zh">订单管理</span></div>
+            <h2 class="h2 text-navy" id="feat2-heading">
+              <span class="en">Complete order lifecycle control</span>
+              <span class="zh">完整的订单生命周期控制</span>
+            </h2>
+            <p style="color:var(--muted);margin-top:14px;font-size:1.0625rem">
+              <span class="en">Every order flows through a transparent, auditable pipeline. Admins have full control at
+                every stage — from scheduling to cancellation with documented reasons.</span>
+              <span class="zh">每个订单都通过透明、可审计的流程处理。管理员在每个阶段都拥有完全控制权——从排期到取消（附记录原因）。</span>
+            </p>
+            <div class="feature-list">
+              <div class="feature-list-item">
+                <div class="check" aria-hidden="true">✓</div>
+                <span class="en">5 order stages: Pending → Assigned → Ongoing → Completed / Cancelled</span>
+                <span class="zh">5个订单阶段：待处理→已分配→进行中→完成/取消</span>
+              </div>
+              <div class="feature-list-item">
+                <div class="check" aria-hidden="true">✓</div>
+                <span class="en">Support for Point-to-Point, Hourly, and Charter transport types</span>
+                <span class="zh">支持点对点、按小时和包车运输类型</span>
+              </div>
+              <div class="feature-list-item">
+                <div class="check" aria-hidden="true">✓</div>
+                <span class="en">Schedule future orders with auto-transition when pickup time arrives</span>
+                <span class="zh">排期未来订单，到取车时间时自动过渡</span>
+              </div>
+              <div class="feature-list-item">
+                <div class="check" aria-hidden="true">✓</div>
+                <span class="en">Reassign or unassign orders mid-trip with a full transfer audit trail</span>
+                <span class="zh">行程中途重新分配或取消分配，附完整的转让审计记录</span>
+              </div>
+              <div class="feature-list-item">
+                <div class="check" aria-hidden="true">✓</div>
+                <span class="en">Add-on charges with documented reason for billing transparency</span>
+                <span class="zh">附加收费并记录原因，确保计费透明</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FEATURE 3: Fleet Compliance ─── -->
+    <section class="feature-section" aria-labelledby="feat3-heading">
+      <div class="container">
+        <div class="feature-row">
+          <div class="feature-content reveal">
+            <div class="section-label"><span class="en">Fleet Compliance</span><span class="zh">车队合规</span></div>
+            <h2 class="h2 text-navy" id="feat3-heading">
+              <span class="en">Never miss a compliance deadline</span>
+              <span class="zh">绝不错过合规截止日期</span>
+            </h2>
+            <p style="color:var(--muted);margin-top:14px;font-size:1.0625rem">
+              <span class="en">DizpatchGO monitors the compliance status of every vehicle in your fleet — road tax,
+                insurance, Puspakom inspection, and service mileage — and flags issues 30 days in advance.</span>
+              <span class="zh">DizpatchGO 监控车队中每辆车的合规状态——道路税、保险、车检和服务里程——并提前30天标记问题。</span>
+            </p>
+            <div class="feature-list">
+              <div class="feature-list-item">
+                <div class="check" aria-hidden="true">✓</div>
+                <span class="en">Road tax, insurance & Puspakom expiry tracking per vehicle</span>
+                <span class="zh">每辆车的道路税、保险和车检到期追踪</span>
+              </div>
+              <div class="feature-list-item">
+                <div class="check" aria-hidden="true">✓</div>
+                <span class="en">Colour-coded status: Valid (green) / Expiring Soon (amber) / Expired (red)</span>
+                <span class="zh">彩色状态：有效（绿色）/即将到期（琥珀色）/已到期（红色）</span>
+              </div>
+              <div class="feature-list-item">
+                <div class="check" aria-hidden="true">✓</div>
+                <span class="en">Service mileage tracking — alerts when service is due or overdue</span>
+                <span class="zh">服务里程追踪——服务到期或逾期时发出警报</span>
+              </div>
+              <div class="feature-list-item">
+                <div class="check" aria-hidden="true">✓</div>
+                <span class="en">Traffic summons management — track offense type, amount, and status</span>
+                <span class="zh">交通传票管理——追踪违规类型、金额和状态</span>
+              </div>
+              <div class="feature-list-item">
+                <div class="check" aria-hidden="true">✓</div>
+                <span class="en">Maintenance log — full service history with costs and receipts</span>
+                <span class="zh">维护日志——包含费用和收据的完整服务历史</span>
+              </div>
+            </div>
+          </div>
+          <div class="feature-visual reveal reveal-delay-2" aria-hidden="true">
+            <div class="feature-visual-inner">
+              <div class="mock-title"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg> Fleet Compliance Dashboard</div>
+              <div class="mock-card">
+                <div class="compliance-row">
+                  <span class="mock-label">Vehicle</span>
+                  <span style="font-size:9px;color:rgba(255,255,255,.5);font-weight:600">Road Tax</span>
+                  <span style="font-size:9px;color:rgba(255,255,255,.5);font-weight:600">Insurance</span>
+                  <span style="font-size:9px;color:rgba(255,255,255,.5);font-weight:600">Puspakom</span>
+                </div>
+                <div class="mock-divider"></div>
+                <div class="compliance-row">
+                  <span class="mock-val" style="font-size:9px">WXY 1234</span>
+                  <span class="mock-badge green">Valid</span>
+                  <span class="mock-badge green">Valid</span>
+                  <span class="mock-badge amber">Expiring</span>
+                </div>
+                <div class="compliance-row">
+                  <span class="mock-val" style="font-size:9px">WMK 5678</span>
+                  <span class="mock-badge green">Valid</span>
+                  <span class="mock-badge red">Expired!</span>
+                  <span class="mock-badge green">Valid</span>
+                </div>
+                <div class="compliance-row">
+                  <span class="mock-val" style="font-size:9px">WRT 9101</span>
+                  <span class="mock-badge amber">Expiring</span>
+                  <span class="mock-badge green">Valid</span>
+                  <span class="mock-badge green">Valid</span>
+                </div>
+                <div class="compliance-row">
+                  <span class="mock-val" style="font-size:9px">WHB 1122</span>
+                  <span class="mock-badge green">Valid</span>
+                  <span class="mock-badge green">Valid</span>
+                  <span class="mock-badge green">Valid</span>
+                </div>
+              </div>
+              <div class="mock-card">
+                <div class="mock-title"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> Service Mileage</div>
+                <div class="mock-bar-row">
+                  <span class="mock-label">WXY 1234</span>
+                  <div class="mock-bar-track">
+                    <div class="mock-bar-fill" style="width:85%;background:var(--teal)"></div>
+                  </div>
+                  <span class="mock-val" style="font-size:8px">8,500 km</span>
+                </div>
+                <div class="mock-bar-row">
+                  <span class="mock-label">WMK 5678</span>
+                  <div class="mock-bar-track">
+                    <div class="mock-bar-fill" style="width:102%;background:#ef4444"></div>
+                  </div>
+                  <span class="mock-badge red" style="font-size:7px">Overdue!</span>
+                </div>
+                <div class="mock-bar-row">
+                  <span class="mock-label">WRT 9101</span>
+                  <div class="mock-bar-track">
+                    <div class="mock-bar-fill" style="width:60%;background:var(--teal)"></div>
+                  </div>
+                  <span class="mock-val" style="font-size:8px">6,000 km</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FEATURE 4: Driver & User Management ─── -->
+    <section class="feature-section" aria-labelledby="feat4-heading">
+      <div class="container">
+        <div class="feature-row">
+          <div class="feature-visual reveal" aria-hidden="true">
+            <div class="feature-visual-inner">
+              <div class="mock-title"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Driver Management</div>
+              <div class="mock-card">
+                <div class="mock-driver-row">
+                  <div class="mock-driver-info">
+                    <div class="mock-driver-name">Ahmad Razif bin Ismail</div>
+                    <div class="mock-driver-sub">@ahmad_razif · +60123456789</div>
+                  </div>
+                  <span class="mock-badge green">Available</span>
+                </div>
+                <div class="mock-pill-row">
+                  <span class="mock-badge teal">EN</span>
+                  <span class="mock-badge teal">BM</span>
+                  <span class="mock-badge blue">Driver</span>
+                </div>
+              </div>
+              <div class="mock-card">
+                <div class="mock-driver-row">
+                  <div class="mock-driver-info">
+                    <div class="mock-driver-name">David Lim Wei Jian</div>
+                    <div class="mock-driver-sub">@david_lim · +60198765432</div>
+                  </div>
+                  <span class="mock-badge amber">N/A</span>
+                </div>
+                <div class="mock-pill-row">
+                  <span class="mock-badge teal">EN</span>
+                  <span class="mock-badge teal">ZH</span>
+                  <span class="mock-badge blue">Driver</span>
+                </div>
+              </div>
+              <div class="mock-card">
+                <div class="mock-title"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Role Access Levels</div>
+                <div class="mock-row"><span class="mock-badge blue" style="margin-right:6px">Driver</span><span
+                    class="mock-val" style="font-size:9px">View & manage own orders</span></div>
+                <div class="mock-divider"></div>
+                <div class="mock-row"><span class="mock-badge teal" style="margin-right:6px">Admin</span><span
+                    class="mock-val" style="font-size:9px">Full operations access</span></div>
+                <div class="mock-divider"></div>
+                <div class="mock-row"><span class="mock-badge green" style="margin-right:6px">SuperAdmin</span><span
+                    class="mock-val" style="font-size:9px">Cross-admin management</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="feature-content reveal reveal-delay-2">
+            <div class="section-label"><span class="en">Driver &amp; Access Management</span><span
+                class="zh">司机与访问管理</span></div>
+            <h2 class="h2 text-navy" id="feat4-heading">
+              <span class="en">Secure, role-based access control</span>
+              <span class="zh">安全的基于角色的访问控制</span>
+            </h2>
+            <p style="color:var(--muted);margin-top:14px;font-size:1.0625rem">
+              <span class="en">Manage every driver's profile, languages, and credentials from one admin panel. A
+                three-tier role system ensures the right people have the right access.</span>
+              <span class="zh">从一个管理面板管理每位司机的资料、语言和凭证。三层角色系统确保正确的人拥有正确的访问权限。</span>
+            </p>
+            <div class="feature-list">
+              <div class="feature-list-item">
+                <div class="check" aria-hidden="true">✓</div>
+                <span class="en">Full driver CRUD — add, edit, delete from the admin panel</span>
+                <span class="zh">完整的司机CRUD——从管理面板添加、编辑、删除</span>
+              </div>
+              <div class="feature-list-item">
+                <div class="check" aria-hidden="true">✓</div>
+                <span class="en">Three roles: Driver, Admin, and SuperAdmin with scoped permissions</span>
+                <span class="zh">三种角色：司机、管理员和超级管理员，各有权限范围</span>
+              </div>
+              <div class="feature-list-item">
+                <div class="check" aria-hidden="true">✓</div>
+                <span class="en">bcrypt password hashing — passwords never stored in plain text</span>
+                <span class="zh">bcrypt密码哈希——密码从不以明文存储</span>
+              </div>
+              <div class="feature-list-item">
+                <div class="check" aria-hidden="true">✓</div>
+                <span class="en">Forced password reset on first login for all new accounts</span>
+                <span class="zh">所有新账户首次登录时强制重置密码</span>
+              </div>
+              <div class="feature-list-item">
+                <div class="check" aria-hidden="true">✓</div>
+                <span class="en">Session-based authentication stored securely in PostgreSQL</span>
+                <span class="zh">基于会话的身份验证，安全存储在PostgreSQL中</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FEATURE 5: Reports & Analytics ─── -->
+    <section class="feature-section" aria-labelledby="feat5-heading">
+      <div class="container">
+        <div class="feature-row">
+          <div class="feature-content reveal">
+            <div class="section-label"><span class="en">Reports &amp; Analytics</span><span class="zh">报告与分析</span>
+            </div>
+            <h2 class="h2 text-navy" id="feat5-heading">
+              <span class="en">Data-driven operations insights</span>
+              <span class="zh">数据驱动的运营洞察</span>
+            </h2>
+            <p style="color:var(--muted);margin-top:14px;font-size:1.0625rem">
+              <span class="en">The admin dashboard surfaces KPIs, revenue charts, and driver performance at a glance —
+                so you can make faster, better decisions for your fleet.</span>
+              <span class="zh">管理仪表板一目了然地显示KPI、收入图表和司机绩效，让您能对车队做出更快、更好的决策。</span>
+            </p>
+            <div class="feature-list">
+              <div class="feature-list-item">
+                <div class="check" aria-hidden="true">✓</div>
+                <span class="en">KPI dashboard — total orders, revenue, active drivers, completion rate</span>
+                <span class="zh">KPI仪表板——总订单、收入、活跃司机、完成率</span>
+              </div>
+              <div class="feature-list-item">
+                <div class="check" aria-hidden="true">✓</div>
+                <span class="en">Revenue trend charts powered by Chart.js</span>
+                <span class="zh">由Chart.js提供支持的收入趋势图表</span>
+              </div>
+              <div class="feature-list-item">
+                <div class="check" aria-hidden="true">✓</div>
+                <span class="en">Per-driver performance reports with trip history and earnings</span>
+                <span class="zh">包含行程历史和收入的每位司机绩效报告</span>
+              </div>
+              <div class="feature-list-item">
+                <div class="check" aria-hidden="true">✓</div>
+                <span class="en">Filter reports by driver, date range, and transport type</span>
+                <span class="zh">按司机、日期范围和运输类型过滤报告</span>
+              </div>
+            </div>
+          </div>
+          <div class="feature-visual reveal reveal-delay-2" aria-hidden="true">
+            <div class="feature-visual-inner">
+              <div class="mock-title"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg> Analytics Dashboard</div>
+              <div class="mock-card">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">
+                  <div style="background:rgba(13,148,136,.2);border-radius:6px;padding:8px;">
+                    <div style="font-size:18px;font-weight:800;color:#5eead4">RM 28.4k</div>
+                    <div style="font-size:8px;color:rgba(255,255,255,.5)">Monthly Revenue</div>
+                    <div style="font-size:8px;color:var(--teal);font-weight:700">↑ 14.2%</div>
+                  </div>
+                  <div style="background:rgba(59,130,246,.2);border-radius:6px;padding:8px;">
+                    <div style="font-size:18px;font-weight:800;color:#93c5fd">312</div>
+                    <div style="font-size:8px;color:rgba(255,255,255,.5)">Orders This Month</div>
+                    <div style="font-size:8px;color:#93c5fd;font-weight:700">↑ 28 orders</div>
+                  </div>
+                </div>
+                <div class="mock-title">Revenue by Week</div>
+                <div class="mock-bar-row"><span class="mock-label">Week 1</span>
+                  <div class="mock-bar-track">
+                    <div class="mock-bar-fill" style="width:68%;background:var(--teal)"></div>
+                  </div><span class="mock-val" style="font-size:8px">RM 6.4k</span>
+                </div>
+                <div class="mock-bar-row"><span class="mock-label">Week 2</span>
+                  <div class="mock-bar-track">
+                    <div class="mock-bar-fill" style="width:82%;background:var(--teal)"></div>
+                  </div><span class="mock-val" style="font-size:8px">RM 7.8k</span>
+                </div>
+                <div class="mock-bar-row"><span class="mock-label">Week 3</span>
+                  <div class="mock-bar-track">
+                    <div class="mock-bar-fill" style="width:75%;background:var(--teal)"></div>
+                  </div><span class="mock-val" style="font-size:8px">RM 7.1k</span>
+                </div>
+                <div class="mock-bar-row"><span class="mock-label">Week 4</span>
+                  <div class="mock-bar-track">
+                    <div class="mock-bar-fill" style="width:94%;background:#14b8a6"></div>
+                  </div><span class="mock-val" style="font-size:8px">RM 7.1k</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <h2 class="h2">
+            <span class="en">See every feature live</span>
+            <span class="zh">亲眼看到所有功能</span>
+          </h2>
+          <p>
+            <span class="en">Book a personalized demo tailored to your fleet size and operations.</span>
+            <span class="zh">预约针对您的车队规模和运营的个性化演示。</span>
+          </p>
+          <div class="cta-banner-actions">
+            <a href="contact.html" class="btn btn-white btn-lg">
+              <span class="en"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 4H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3"/><path d="M9 12h6"/><path d="M9 16h6"/><path d="M9 8h1"/></svg> Request a Demo</span>
+              <span class="zh"><svg class="icon-svg" style="display:inline-block;width:1em;height:1em;vertical-align:-0.15em;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 4H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3"/><path d="M9 12h6"/><path d="M9 16h6"/><path d="M9 8h1"/></svg> 申请演示</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/brandlogo.png" alt="DizpatchGO Logo" class="logo-mark">
+          <p class="en">DizpatchGO — Enterprise fleet dispatch management built for efficiency, compliance, and scale.
+          </p>
+          <p class="zh">DizpatchGO — 专为效率、合规和规模化打造的企业车队调度管理。</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="en">Product</h4>
+          <h4 class="zh">产品</h4>
+          <ul>
+            <li><a href="features.html"><span class="en">Features</span><span class="zh">功能</span></a></li>
+            <li><a href="for-drivers.html"><span class="en">For Drivers</span><span class="zh">司机专区</span></a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="en">Company</h4>
+          <h4 class="zh">公司</h4>
+          <ul>
+            <li><a href="contact.html"><span class="en">Contact Us</span><span class="zh">联系我们</span></a></li>
+            <li><a href="contact.html"><span class="en">Request Demo</span><span class="zh">申请演示</span></a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="en">Legal</h4>
+          <h4 class="zh">法律</h4>
+          <ul>
+            <li><a href="privacy-policy.html"><span class="en">Privacy Policy</span><span class="zh">隐私政策</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="en">&copy; 2026 DizpatchGO. All rights reserved.</p>
+        <p class="zh">&copy; 2026 DizpatchGO. 保留所有权利。</p>
+        <div class="footer-bottom-links">
+          <a href="privacy-policy.html" rel="noopener noreferrer"><span class="en">Privacy</span><span class="zh">隐私</span></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.link/zyk4vm" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"
+     style="position:fixed;right:24px;bottom:24px;width:56px;height:56px;min-width:56px;min-height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.28);z-index:999;line-height:0;">
+    <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false" style="display:block;width:30px;height:30px;flex-shrink:0;">
+      <path fill="#fff" d="M16 3C9.1 3 3.5 8.6 3.5 15.5c0 2.7.9 5.3 2.5 7.4L4.5 28l5.3-1.4c2 1.1 4.3 1.7 6.6 1.7 6.9 0 12.5-5.6 12.5-12.5S22.9 3 16 3z"/>
+      <path fill="#25d366" d="M21.4 18.2c-.4-.2-2.2-1.1-2.6-1.2-.3-.1-.6-.2-.9.2-.3.4-1 1.2-1.2 1.4-.2.2-.4.3-.8.1-2.1-1.1-3.5-1.9-4.9-4.3-.4-.6.4-.6 1-1.9.1-.3 0-.5-.1-.7-.1-.2-.8-2-1.2-2.7-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.6.1-.9.4-.3.3-1.3 1.3-1.3 3 0 1.8 1.3 3.5 1.5 3.7.2.3 2.4 3.7 5.9 5.1 3.5 1.3 3.5.9 4.6.8 1.2-.1 2.2-.9 2.5-1.7.3-.7.3-1.4.2-1.6-.1-.2-.4-.3-.5-.3z"/>
+    </svg>
+  </a>
+
+
+  <script src="js/nav.js?v=20260921"></script>
+</body>
+
+</html>
